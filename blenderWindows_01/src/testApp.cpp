@@ -10,6 +10,7 @@ ofTrueTypeFont font;
 //--------------------------------------------------------------
 void testApp::setup(){
 	ofBackground(240);
+	ofSetLogLevel(OF_LOG_VERBOSE);
 	
 	font.loadFont("verdana.ttf", 18);
 	
@@ -63,7 +64,7 @@ void testApp::draw(){
 	ofSetColor(255);
 	ofNoFill();
 	for (int i = 0; i < N_TEXTFIELDS; i++) {
-		multilineTextInput[i].posActive(mouseX, mouseY);
+		//multilineTextInput[i].posActive(mouseX, mouseY);
 		multilineTextInput[i].draw();
 	}
 	
