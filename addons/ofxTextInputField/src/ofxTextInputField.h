@@ -81,6 +81,7 @@ class ofxTextInputField {
 	
 	//added by SabrinaVerhage
 	void	posActive(int x, int y);
+        string  wrapText(string txt, int width);
 
     
 	#ifdef USE_GLFW_CLIPBOARD

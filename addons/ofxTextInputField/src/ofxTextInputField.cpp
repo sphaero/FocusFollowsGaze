@@ -335,6 +335,55 @@ void ofxTextInputField::posActive(int x, int y){
 }
 ///////////////////////////////////
 
+string ofxTextInputField::wrapText(string txt, int width){
+        
+    // CLEANUP STRING
+    // first remove URLS
+    int find = txt.find("http://");
+    int sizeStrToRemove = txt.length()-find;
+    int l = 0;
+    for(l = find; l < txt.length(); l++ ){
+        
+        if( txt.at(l) == ' ' ){
+            sizeStrToRemove = find-l;
+        }
+    }
+    if(find >= 0){
+        //cout << "URL: " << txt.substr(find,sizeStrToRemove) << endl;
+        txt.erase(find,sizeStrToRemove);
+    }
+    
+    // second remove all \n
+    //replaceAll(txt, "\n", "");
+    
+    float w = fontRef->stringWidth(txt);
+    int pieces = ceil(w/width);
+    int CharCount = 0;
+    
+    string::size_type prevSpaceLoc = 0;
+    string::size_type prevRetLoc = 0;
+    string::size_type curSpaceLoc = txt.find(" ");
+    while (curSpaceLoc != string::npos) {
+
+        string txtFromPrevRetToCurSpace = txt.substr(prevRetLoc, curSpaceLoc-prevRetLoc);
+        //cout << "txtFromPrevRetToCurSpace: " << txtFromPrevRetToCurSpace << endl;
+
+        if (fontRef->stringWidth(txtFromPrevRetToCurSpace) > width ) {
+            txt.replace(prevSpaceLoc,1,"\n");
+            prevRetLoc = prevSpaceLoc;
+            //cout << "Inserting a ret because \"" << txtFromPrevRetToCurSpace << "\" has size " << font.stringWidth(txtFromPrevRetToCurSpace) << endl;
+        }
+        prevSpaceLoc = curSpaceLoc;
+        curSpaceLoc = txt.find(" ", curSpaceLoc+1);
+    }
+    //final check including the last word
+    string txtFromPrevRetToCurSpace = txt.substr(prevRetLoc, txt.length()-prevRetLoc);
+    if (fontRef->stringWidth(txtFromPrevRetToCurSpace) > width ) {
+        txt.replace(prevSpaceLoc,1,"\n");
+    }
+    return txt;
+}
+
 
 void ofxTextInputField::mouseReleased(ofMouseEventArgs& args){
 
