@@ -81,7 +81,7 @@ class ofxTextInputField {
 	
 	//added by SabrinaVerhage
 	void	posActive(int x, int y);
-        string  wrapText(string txt, int width);
+	string  wrapText(string txt, int width);
 
     
 	#ifdef USE_GLFW_CLIPBOARD
@@ -97,6 +97,7 @@ class ofxTextInputField {
 	
     bool 	isEnabled;
 	bool	isEditing;
+	bool 	isSloppy;
 	bool	mouseDownInRect;
 	void    mousePressed(ofMouseEventArgs& args);
     void    mouseDragged(ofMouseEventArgs& args);

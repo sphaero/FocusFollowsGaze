@@ -49,7 +49,8 @@ ofxTextInputField::ofxTextInputField() {
 	fontRef = NULL;
     isEnabled = false;
 	isEditing = false;
-    bounds = ofRectangle(0,0,100,22);
+	isSloppy = true;
+	bounds = ofRectangle(0,0,100,22);
 	
     drawCursor = false;
 	autoClear = false;
@@ -77,6 +78,8 @@ void ofxTextInputField::setup(){
 
 void ofxTextInputField::enable(){
 	if(!isEnabled){
+		if (isSloppy)
+			ofAddListener(ofEvents().mouseMoved, this, &ofxTextInputField::mouseMoved);
 		ofAddListener(ofEvents().mousePressed, this, &ofxTextInputField::mousePressed);
 		ofAddListener(ofEvents().mouseDragged, this, &ofxTextInputField::mouseDragged);
 		ofAddListener(ofEvents().mouseReleased, this, &ofxTextInputField::mouseReleased);
@@ -94,8 +97,8 @@ void ofxTextInputField::disable(){
         ofRemoveListener(ofEvents().mousePressed, this, &ofxTextInputField::mousePressed);
 		ofRemoveListener(ofEvents().mouseDragged, this, &ofxTextInputField::mouseDragged);
 		ofRemoveListener(ofEvents().mouseReleased, this, &ofxTextInputField::mouseReleased);
-		//added by Sabrina
-		//ofRemoveListener(ofEvents().mouseMoved, this, &ofxTextInputField::mouseMoved);
+		if (isSloppy)
+			ofRemoveListener(ofEvents().mouseMoved, this, &ofxTextInputField::mouseMoved);
 		isEnabled = false;
     }
 	
@@ -312,6 +315,7 @@ void ofxTextInputField::mouseDragged(ofMouseEventArgs& args) {
 /////////////////////////////////// added by SabrinaVerhage
 void ofxTextInputField::mouseMoved(ofMouseEventArgs& args){
 	
+	ofLogVerbose() << "mouseMoved: " << args.x << "," << args.y;
     if(bounds.inside(args.x, args.y)) {
         if(!isEditing){
 	        beginEditing();
@@ -322,17 +326,6 @@ void ofxTextInputField::mouseMoved(ofMouseEventArgs& args){
 	}
 }
 
-void ofxTextInputField::posActive(int x, int y){
-	
-    if(bounds.inside(x, y)) {
-        if(!isEditing){
-	        beginEditing();
-        }
-    }
-    else if(isEditing){
-		endEditing();
-	}
-}
 ///////////////////////////////////
 
 string ofxTextInputField::wrapText(string txt, int width){
