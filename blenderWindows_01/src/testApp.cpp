@@ -1,51 +1,36 @@
 #include "testApp.h"
 
 #define N_TEXTFIELDS 4
+#define OG_UDP_PORT 20320
 
 ofxTextInputField multilineTextInput[N_TEXTFIELDS];
-
 ofTrueTypeFont font;
-
 
 //--------------------------------------------------------------
 void testApp::setup(){
 	ofBackground(240);
 	ofSetLogLevel(OF_LOG_VERBOSE);
-	
+	ofSetFrameRate(60);
 	font.loadFont("verdana.ttf", 18);
 	
+	// Setup UDP socket to receive data from OpenGazer
+	udpSocket.Create();
+	udpSocket.Bind(OG_UDP_PORT);
+	udpSocket.SetNonBlocking(true);
+	//initialise gaze coords
+	gazeCoords[0] = -1;
+	gazeCoords[1] = -1;
+
 	for (int i = 0; i < N_TEXTFIELDS; i++) {
 		multilineTextInput[i].setup();
 		multilineTextInput[i].multiline = true;
 		multilineTextInput[i].setFont(font);
 	}
-	
-	//dimensions for Blender mock-up
-	multilineTextInput[0].bounds.x = 0;
-	multilineTextInput[0].bounds.y = 0;
-	multilineTextInput[0].bounds.width = ofGetWindowWidth()/4;
-	multilineTextInput[0].bounds.height = ofGetWindowHeight()/4*3;
-	
-	multilineTextInput[1].bounds.x = ofGetWindowWidth()/4*3;
-	multilineTextInput[1].bounds.y = 0;
-	multilineTextInput[1].bounds.width = ofGetWindowWidth()/4;
-	multilineTextInput[1].bounds.height = ofGetWindowHeight()/4*3;
-	
-	multilineTextInput[2].bounds.x = 0;
-	multilineTextInput[2].bounds.y = ofGetWindowHeight()/4*3;
-	multilineTextInput[2].bounds.width = ofGetWindowWidth();
-	multilineTextInput[2].bounds.height = ofGetWindowHeight()/4;
-	
-	multilineTextInput[3].bounds.x = ofGetWindowWidth()/4;
-	multilineTextInput[3].bounds.y = 0;
-	multilineTextInput[3].bounds.width = ofGetWindowWidth()/2;
-	multilineTextInput[3].bounds.height = ofGetWindowHeight()/4*3;
-
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+	receiveGazeCoords();
 }
 
 //--------------------------------------------------------------
@@ -72,6 +57,34 @@ void testApp::draw(){
 //	multilineTextInput[0].draw();
 	
 
+}
+
+void testApp::receiveGazeCoords()
+{
+	char udpMsg[100];
+	udpSocket.Receive(udpMsg, sizeof(udpMsg));
+	if (strlen(udpMsg) > 1)
+	{
+		int coords[2];// = (int*)udpMsg;
+		memcpy(coords, (void*)udpMsg, sizeof(coords));
+		ofLogVerbose() << coords[0] << ":" << coords[1];
+	}
+	else
+	{
+		gazeCoords[0] = -1;
+		gazeCoords[1] = -1;
+	}
+}
+
+void testApp::drawGaze()
+{
+	if(gazeCoords[0] == -1)
+		return;
+	ofPushMatrix();
+	ofNoFill();
+	ofSetColor(100);
+	ofCircle(ofPoint(gazeCoords[0], gazeCoords[1]), 40);
+	ofPopMatrix();
 }
 
 //--------------------------------------------------------------
@@ -106,6 +119,26 @@ void testApp::mouseReleased(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::windowResized(int w, int h){
+	//dimensions for Blender mock-up
+	multilineTextInput[0].bounds.x = 0;
+	multilineTextInput[0].bounds.y = 0;
+	multilineTextInput[0].bounds.width = ofGetWindowWidth()/4;
+	multilineTextInput[0].bounds.height = ofGetWindowHeight()/4*3;
+
+	multilineTextInput[1].bounds.x = ofGetWindowWidth()/4*3;
+	multilineTextInput[1].bounds.y = 0;
+	multilineTextInput[1].bounds.width = ofGetWindowWidth()/4;
+	multilineTextInput[1].bounds.height = ofGetWindowHeight()/4*3;
+
+	multilineTextInput[2].bounds.x = 0;
+	multilineTextInput[2].bounds.y = ofGetWindowHeight()/4*3;
+	multilineTextInput[2].bounds.width = ofGetWindowWidth();
+	multilineTextInput[2].bounds.height = ofGetWindowHeight()/4;
+
+	multilineTextInput[3].bounds.x = ofGetWindowWidth()/4;
+	multilineTextInput[3].bounds.y = 0;
+	multilineTextInput[3].bounds.width = ofGetWindowWidth()/2;
+	multilineTextInput[3].bounds.height = ofGetWindowHeight()/4*3;
 
 }
 

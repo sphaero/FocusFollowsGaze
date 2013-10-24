@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxTextInputField.h"
+#include "ofxUDPManager.h"
 
 class testApp : public ofBaseApp{
 
@@ -20,6 +21,8 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-		
-
+		ofxUDPManager	udpSocket;
+		int 			gazeCoords[2];
+		void			receiveGazeCoords();
+		void			drawGaze();
 };
