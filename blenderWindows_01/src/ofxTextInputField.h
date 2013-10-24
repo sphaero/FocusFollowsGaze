@@ -78,10 +78,6 @@ class ofxTextInputField {
 	bool autoTab;
 	
 	bool multiline;
-	
-	//added by SabrinaVerhage
-	string  wrapText(string txt, int width);
-
     
 	#ifdef USE_GLFW_CLIPBOARD
     void setClipboard(string clippy);
@@ -111,7 +107,10 @@ class ofxTextInputField {
 	//void setCursorXYFromPosition();
 	void getCursorCoords(int pos, int &cursorX, int &cursorY);
 	int getCursorPositionFromMouse(int x, int y);
-    
+
+	//added by SabrinaVerhage
+	string  wrapText(string& txt, int width);
+
     bool isShifted, isCommand;
     map<int, char> shiftMap;
 };

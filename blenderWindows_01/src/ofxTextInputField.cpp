@@ -155,7 +155,7 @@ void ofxTextInputField::draw() {
 
 		ofPushStyle();
 		// argh, splitting all the time.
-		vector<string> lines = ofSplitString(text, "\n");
+		vector<string> lines = ofSplitString(wrapText(text, bounds.getWidth()), "\n");
 		int beginCursorX, beginCursorY;
 		int endCursorX, endCursorY;
 		getCursorCoords(selectionBegin, beginCursorX, beginCursorY);
@@ -207,7 +207,7 @@ void ofxTextInputField::draw() {
 		
 		
 		// argh, splitting all the time.
-		vector<string> lines = ofSplitString(text, "\n");
+		vector<string> lines = ofSplitString(wrapText(text, bounds.getWidth()), "\n");
 		
 		
 		// calculate this every loop.
@@ -230,7 +230,8 @@ void ofxTextInputField::draw() {
         ofPopStyle();
     }
 	
-	fontRef->drawString(text, HORIZONTAL_PADDING, fontRef->getLineHeight()+VERTICAL_PADDING);
+	fontRef->drawString(wrapText(text, bounds.getWidth()), HORIZONTAL_PADDING, fontRef->getLineHeight()+VERTICAL_PADDING);
+	//fontRef->drawString(text, HORIZONTAL_PADDING, fontRef->getLineHeight()+VERTICAL_PADDING);
 	
 	//print cursorPosition
 	//cout << cursorPosition << endl;
@@ -239,7 +240,7 @@ void ofxTextInputField::draw() {
 }
 
 void ofxTextInputField::getCursorCoords(int pos, int &cursorX, int &cursorY) {
-	vector<string> lines = ofSplitString(text, "\n");
+	vector<string> lines = ofSplitString(wrapText(text, bounds.getWidth()), "\n");
 	
 	
 	int c = 0;
@@ -274,7 +275,7 @@ int ofxTextInputField::getCursorPositionFromMouse(int x, int y) {
 	int line = pos;
 	cursorY = line;
 	
-	vector<string> lines = ofSplitString(text, "\n");
+	vector<string> lines = ofSplitString(wrapText(text, bounds.getWidth()), "\n");
 	if(cursorY>=lines.size()-1) cursorY = lines.size()-1;
 	if(lines.size()>0) {
 		cursorX = fontRef->getPosition(lines[cursorY], x - HORIZONTAL_PADDING - bounds.x);
@@ -315,7 +316,7 @@ void ofxTextInputField::mouseDragged(ofMouseEventArgs& args) {
 /////////////////////////////////// added by SabrinaVerhage
 void ofxTextInputField::mouseMoved(ofMouseEventArgs& args){
 	
-	ofLogVerbose() << "mouseMoved: " << args.x << "," << args.y;
+	//ofLogVerbose() << "mouseMoved: " << args.x << "," << args.y;
     if(bounds.inside(args.x, args.y)) {
         if(!isEditing){
 	        beginEditing();
@@ -328,53 +329,48 @@ void ofxTextInputField::mouseMoved(ofMouseEventArgs& args){
 
 ///////////////////////////////////
 
-string ofxTextInputField::wrapText(string txt, int width){
-        
-    // CLEANUP STRING
-    // first remove URLS
-    int find = txt.find("http://");
-    int sizeStrToRemove = txt.length()-find;
-    int l = 0;
-    for(l = find; l < txt.length(); l++ ){
-        
-        if( txt.at(l) == ' ' ){
-            sizeStrToRemove = find-l;
-        }
-    }
-    if(find >= 0){
-        //cout << "URL: " << txt.substr(find,sizeStrToRemove) << endl;
-        txt.erase(find,sizeStrToRemove);
-    }
+string ofxTextInputField::wrapText(string& txt, int width){
     
-    // second remove all \n
-    //replaceAll(txt, "\n", "");
-    
-    float w = fontRef->stringWidth(txt);
-    int pieces = ceil(w/width);
-    int CharCount = 0;
-    
-    string::size_type prevSpaceLoc = 0;
-    string::size_type prevRetLoc = 0;
-    string::size_type curSpaceLoc = txt.find(" ");
-    while (curSpaceLoc != string::npos) {
 
-        string txtFromPrevRetToCurSpace = txt.substr(prevRetLoc, curSpaceLoc-prevRetLoc);
-        //cout << "txtFromPrevRetToCurSpace: " << txtFromPrevRetToCurSpace << endl;
+	//iterate through string untill we find a space
+	std::string::iterator it = txt.begin();
 
-        if (fontRef->stringWidth(txtFromPrevRetToCurSpace) > width ) {
-            txt.replace(prevSpaceLoc,1,"\n");
-            prevRetLoc = prevSpaceLoc;
-            //cout << "Inserting a ret because \"" << txtFromPrevRetToCurSpace << "\" has size " << font.stringWidth(txtFromPrevRetToCurSpace) << endl;
-        }
-        prevSpaceLoc = curSpaceLoc;
-        curSpaceLoc = txt.find(" ", curSpaceLoc+1);
-    }
-    //final check including the last word
-    string txtFromPrevRetToCurSpace = txt.substr(prevRetLoc, txt.length()-prevRetLoc);
-    if (fontRef->stringWidth(txtFromPrevRetToCurSpace) > width ) {
-        txt.replace(prevSpaceLoc,1,"\n");
-    }
-    return txt;
+	float currentWidth;
+	int posCount = 0;
+	int prevSpacePos = 0;
+	int lastEOLPos = 0;
+
+	string newTxt = "";
+	while ( it != txt.end() )
+	{
+		//measure length from lastEOL to current position
+		currentWidth = fontRef->stringWidth(txt.substr(lastEOLPos, posCount-lastEOLPos));
+		if ( currentWidth > width  && prevSpacePos > lastEOLPos)
+		{
+			// append from last EOL to previous space to new text buffer
+			// remove space (-1)
+			newTxt.append(txt.substr(lastEOLPos, (prevSpacePos-lastEOLPos)));
+			newTxt.append("\n");
+			// save last EOL pos
+			lastEOLPos = prevSpacePos+1;
+		}
+
+		//if we find a space...
+		if (*it == ' ')
+		{
+			prevSpacePos = posCount;
+		}
+		if (*it == '\n')
+		{
+			newTxt.append(txt.substr(lastEOLPos, posCount-lastEOLPos));
+			lastEOLPos = posCount;
+		}
+		posCount++;
+		++it;
+	}
+	// copy remainder
+	newTxt.append(txt.substr(lastEOLPos));
+	return newTxt;
 }
 
 
@@ -481,7 +477,7 @@ void ofxTextInputField::keyPressed(ofKeyEventArgs& args) {
 			int xx, yy;
 			getCursorCoords(cursorPosition, xx, yy);
 			
-			vector<string> lines = ofSplitString(text, "\n");
+			vector<string> lines = ofSplitString(wrapText(text, bounds.getWidth()), "\n");
 			if(yy>0) {
 				
 				// collect all the whitespace on the previous line.
@@ -597,7 +593,7 @@ void ofxTextInputField::keyPressed(ofKeyEventArgs& args) {
 				getCursorCoords(cursorPosition, xx, yy);
 				if(yy>0) {
 					yy--;
-					vector<string> lines = ofSplitString(text, "\n");
+					vector<string> lines = ofSplitString(wrapText(text, bounds.getWidth()), "\n");
 					xx = MIN(lines[yy].size()-1, xx);
 					cursorPosition = xx;
 					for(int i = 0; i < yy; i++) cursorPosition += lines[i].size()+1;
@@ -618,7 +614,7 @@ void ofxTextInputField::keyPressed(ofKeyEventArgs& args) {
 		} else {
 			int xx, yy;
 			getCursorCoords(cursorPosition, xx, yy);
-			vector<string> lines = ofSplitString(text, "\n");
+			vector<string> lines = ofSplitString(wrapText(text, bounds.getWidth()), "\n");
 			yy++;
 			if(yy<lines.size()-1) {
 				
