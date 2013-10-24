@@ -8,7 +8,8 @@ ofTrueTypeFont font;
 
 //--------------------------------------------------------------
 void testApp::setup(){
-	ofBackground(240);
+	ofBackground(240);\
+	ofEnableAlphaBlending();
 	ofSetLogLevel(OF_LOG_VERBOSE);
 	ofSetFrameRate(60);
 	font.loadFont("verdana.ttf", 18);
@@ -53,6 +54,7 @@ void testApp::draw(){
 		multilineTextInput[i].draw();
 	}
 	
+	drawGaze();
 //	multilineTextInput[0].posActive(mouseX, mouseY);
 //	multilineTextInput[0].draw();
 	
@@ -65,9 +67,8 @@ void testApp::receiveGazeCoords()
 	udpSocket.Receive(udpMsg, sizeof(udpMsg));
 	if (strlen(udpMsg) > 1)
 	{
-		int coords[2];// = (int*)udpMsg;
-		memcpy(coords, (void*)udpMsg, sizeof(coords));
-		ofLogVerbose() << coords[0] << ":" << coords[1];
+		memcpy(gazeCoords, (void*)udpMsg, sizeof(gazeCoords));
+		ofLogVerbose() << gazeCoords[0] << ":" << gazeCoords[1];
 	}
 	else
 	{
@@ -78,12 +79,16 @@ void testApp::receiveGazeCoords()
 
 void testApp::drawGaze()
 {
-	if(gazeCoords[0] == -1)
-		return;
+	//if(gazeCoords[0] == -1)
+	//	return;
 	ofPushMatrix();
 	ofNoFill();
-	ofSetColor(100);
+	ofSetColor(100,255,255,100);
 	ofCircle(ofPoint(gazeCoords[0], gazeCoords[1]), 40);
+	ofSetColor(100,255,255,50);
+	ofCircle(ofPoint(gazeCoords[0], gazeCoords[1]), 20);
+	ofSetColor(100,255,255,20);
+	ofCircle(ofPoint(gazeCoords[0], gazeCoords[1]), 10);
 	ofPopMatrix();
 }
 
