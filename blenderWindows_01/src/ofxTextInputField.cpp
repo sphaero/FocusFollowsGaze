@@ -65,9 +65,6 @@ ofxTextInputField::ofxTextInputField() {
 }
 
 ofxTextInputField::~ofxTextInputField(){
-	if(isEnabled){
-        disable();
-    }
 
 }
 
