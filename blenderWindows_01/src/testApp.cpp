@@ -68,27 +68,29 @@ void testApp::receiveGazeCoords()
 	if (strlen(udpMsg) > 1)
 	{
 		memcpy(gazeCoords, (void*)udpMsg, sizeof(gazeCoords));
-		ofLogVerbose() << gazeCoords[0] << ":" << gazeCoords[1];
 	}
-	else
+	/*else
 	{
 		gazeCoords[0] = -1;
 		gazeCoords[1] = -1;
-	}
+	}*/
 }
 
 void testApp::drawGaze()
 {
 	//if(gazeCoords[0] == -1)
 	//	return;
+		ofLogVerbose() << gazeCoords[0] << ":" << gazeCoords[1];
+	int coordX = gazeCoords[0] - ofGetWindowPositionX();
+	int coordY = gazeCoords[1] - ofGetWindowPositionY();
 	ofPushMatrix();
 	ofNoFill();
 	ofSetColor(100,255,255,100);
-	ofCircle(ofPoint(gazeCoords[0], gazeCoords[1]), 40);
+	ofCircle(ofPoint(coordX, coordY), 40);
 	ofSetColor(100,255,255,50);
-	ofCircle(ofPoint(gazeCoords[0], gazeCoords[1]), 20);
+	ofCircle(ofPoint(coordX, coordY), 20);
 	ofSetColor(100,255,255,20);
-	ofCircle(ofPoint(gazeCoords[0], gazeCoords[1]), 10);
+	ofCircle(ofPoint(coordX, coordY), 10);
 	ofPopMatrix();
 }
 
