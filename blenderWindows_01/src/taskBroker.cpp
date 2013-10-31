@@ -69,3 +69,15 @@ void taskBroker::newTask()
 {
 	currentTask = new blenderTask();
 }
+
+void taskBroker::outputResults()
+{
+	std::vector<blenderTask*>::iterator it = measuredTasks.begin();
+	while (it != measuredTasks.end())
+	{
+		ofLogVerbose() << "task finished at: " << (*it)->endTime
+					<< " started at: " << (*it)->startTime
+					<< " status = " << (*it)->result;
+		it++;
+	}
+}

@@ -19,6 +19,7 @@ public:
 	void addTask(blenderTask &task);
 	void newTask();
 	void saveCurrentTask();
+	void outputResults();
 
 	std::vector<blenderTask*>	tasks;
 	std::vector<blenderTask*>	measuredTasks;

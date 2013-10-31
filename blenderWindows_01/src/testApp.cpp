@@ -102,7 +102,14 @@ void testApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-
+	switch (key)
+	{
+	case 'l':
+		broker.outputResults();
+		break;
+	default:
+		break;
+	}
 }
 
 //--------------------------------------------------------------
