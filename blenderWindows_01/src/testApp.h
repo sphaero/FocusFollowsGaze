@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxTextInputField.h"
 #include "ofxUDPManager.h"
+#include "taskBroker.h"
 
 class testApp : public ofBaseApp{
 
@@ -25,4 +26,6 @@ class testApp : public ofBaseApp{
 		int 			gazeCoords[2];
 		void			receiveGazeCoords();
 		void			drawGaze();
+
+		taskBroker		broker;
 };
