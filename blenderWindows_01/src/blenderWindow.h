@@ -19,6 +19,8 @@ public:
 	bool cmdActive;
 	bool active;
 	bool coloredActive;
+	// time to fade back to original color
+	float coloredTime;
 
 private:
 	void processColored();
