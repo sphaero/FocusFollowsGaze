@@ -4,6 +4,7 @@
 #include "ofxTextInputField.h"
 #include "ofxUDPManager.h"
 #include "blenderWindow.h"
+#include "taskBroker.h"
 
 #define OG_UDP_PORT 20320
 
@@ -31,4 +32,7 @@ public:
 	
 	int nWindows;
 	blenderWindow** testWindow;
+
+	taskBroker		broker;
+
 };

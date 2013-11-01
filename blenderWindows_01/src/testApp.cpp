@@ -33,7 +33,8 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-	receiveGazeCoords();
+	//receiveGazeCoords();
+	broker.update();
 }
 
 //--------------------------------------------------------------
@@ -61,7 +62,7 @@ void testApp::drawGaze()
 {
 	//if(gazeCoords[0] == -1)
 	//	return;
-		ofLogVerbose() << gazeCoords[0] << ":" << gazeCoords[1];
+	//ofLogVerbose() << gazeCoords[0] << ":" << gazeCoords[1];
 	int coordX = gazeCoords[0] - ofGetWindowPositionX();
 	int coordY = gazeCoords[1] - ofGetWindowPositionY();
 	ofPushMatrix();
@@ -82,7 +83,14 @@ void testApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-
+	switch (key)
+	{
+	case 'l':
+		broker.outputResults();
+		break;
+	default:
+		break;
+	}
 }
 
 //--------------------------------------------------------------
