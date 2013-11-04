@@ -13,6 +13,7 @@ blenderTask::blenderTask() {
 	endTime = 0.f;
 	timeOut = 1.f;
 	result = blenderTask::INIT;
+	correspondingWindow = NULL;
 }
 
 blenderTask::~blenderTask() {

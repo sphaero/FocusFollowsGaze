@@ -8,7 +8,7 @@
 #ifndef BLENDERTASK_H_
 #define BLENDERTASK_H_
 
-//#include "blenderWindow.h"
+#include "blenderWindow.h"
 #include "ofMain.h"
 
 class blenderTask {
@@ -24,14 +24,14 @@ public:
 		SHORTCUTERR
 	};
 
-	//blenderWindow* 			correspondingWindow;
+	blenderWindow* 			correspondingWindow;
 	float					timeOut;
 	float					startTime;
 	float					endTime;
 	blenderTask::RESULT		result;
 
-	//blenderWindow* 	getCorrespondingWindow() { return correspondingWindow; }
-	//void			setCorrespondingWindow(blenderWindow &window) { correspondingWindow = window };
+	blenderWindow* 	getCorrespondingWindow() { return correspondingWindow; }
+	void			setCorrespondingWindow(blenderWindow &window) { correspondingWindow = &window; }
 };
 
 #endif /* BLENDERTASK_H_ */

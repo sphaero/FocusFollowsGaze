@@ -38,18 +38,27 @@ void taskBroker::update() {
 	float curTime = ofGetElapsedTimef();
 	if (currentTask)
 	{
-		// check for if completed (endTime = 0 at start!)
-		if (currentTask->endTime > currentTask->startTime)
+		if (!currentTask->correspondingWindow)
 		{
-			saveCurrentTask();
+			ofLogError("correspondingWindow is NULL");
 		}
-		//check for timeout
-		if (currentTask->startTime + currentTask->timeOut < curTime )
+		else
 		{
-			ofLogVerbose() << "task timeout";
-			currentTask->endTime = curTime;
-			currentTask->result = blenderTask::TIMEOUT;
-			saveCurrentTask();
+			// check for if completed (endTime = 0 at start!)
+			if ( currentTask->correspondingWindow->taskCompleted )
+			{
+				currentTask->endTime = curTime;
+				determineResult();
+				saveCurrentTask();
+			}
+			//check for timeout
+			if (currentTask->startTime + currentTask->timeOut < curTime )
+			{
+				ofLogVerbose() << "task timeout";
+				currentTask->endTime = curTime;
+				currentTask->result = blenderTask::TIMEOUT;
+				saveCurrentTask();
+			}
 		}
 	}
 	else if (nextTaskDeparture < curTime)
@@ -58,9 +67,30 @@ void taskBroker::update() {
 	}
 }
 
+void taskBroker::determineResult()
+{
+	// task is successful
+	if (currentTask->correspondingWindow->active &&
+			currentTask->correspondingWindow->taskCompleted )
+	{
+		currentTask->result = blenderTask::CORRECT;
+	}
+	// task wrong window
+	else if (currentTask->correspondingWindow->active &&
+			currentTask->correspondingWindow->taskCompleted )
+	{
+		currentTask->result = blenderTask::WINDOWERR;
+	}
+	// task probably wrong shortcut
+	else {
+		currentTask->result = blenderTask::SHORTCUTERR;
+	}
+}
+
 void taskBroker::saveCurrentTask()
 {
 	measuredTasks.push_back(currentTask);
+
 	ofLogVerbose() << "task finished at: " << currentTask->endTime
 			<< " started at: " << currentTask->startTime
 			<< " status = " << currentTask->result;

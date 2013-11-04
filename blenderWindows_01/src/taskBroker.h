@@ -19,6 +19,7 @@ public:
 	void addTask(blenderTask &task);
 	void newTask();
 	void saveCurrentTask();
+	void determineResult();
 	void outputResults();
 
 	std::vector<blenderTask*>	tasks;
