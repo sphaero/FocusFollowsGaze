@@ -12,6 +12,7 @@
 
 TDWindow::TDWindow() {
 	gorotate = false;
+	taskCompleted = false;
 }
 
 void TDWindow::setup() {
@@ -51,6 +52,8 @@ void TDWindow::draw() {
 	ofBox(0, 0, 100, 100);
 	ofPopMatrix();
 	cam.end();
+	
+	cout << taskCompleted << endl;
 }
 
 void TDWindow::onKeyRelease(int key) {
@@ -61,8 +64,11 @@ void TDWindow::onKeyRelease(int key) {
 }
 
 void TDWindow::mouseReleased(int x, int y, int button) {
+	if (gorotate == true) {
+		taskCompleted = true; //task broker makes it false again
+	} 
 	gorotate = false;
-	//taskCompleted = true;
+
 }
 
 TDWindow::~TDWindow() {

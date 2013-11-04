@@ -28,6 +28,8 @@ public:
 	// time to fade back to original color
 	float coloredTime;
 	
+	bool taskCompleted;
+	
 	ofTrueTypeFont font;
 
 private:

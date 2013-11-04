@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -273,7 +271,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>20</integer>
+									<integer>7</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -309,12 +307,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>blenderTask.h</string>
+								<string>TDWindow.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,11 +322,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>blenderTask.h</string>
+										<string>TDWindow.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0470B562182809C0002D19A6</string>
+										<string>0470B59318280CCF002D19A6</string>
 										<key>history</key>
 										<array>
 											<string>0439AA27180EC97C0002D60E</string>
@@ -337,17 +337,18 @@
 											<string>0470B2851827D01A002D19A6</string>
 											<string>0470B29B1827D1DE002D19A6</string>
 											<string>0470B4651827FB89002D19A6</string>
-											<string>0470B4F9182803E6002D19A6</string>
-											<string>0470B50C182805DC002D19A6</string>
-											<string>0470B51218280605002D19A6</string>
 											<string>0470B51418280605002D19A6</string>
-											<string>0470B537182806EE002D19A6</string>
-											<string>0470B53F1828071B002D19A6</string>
-											<string>0470B5551828093B002D19A6</string>
-											<string>0470B5561828093B002D19A6</string>
 											<string>0470B5571828093B002D19A6</string>
-											<string>0470B560182809C0002D19A6</string>
-											<string>0470B561182809C0002D19A6</string>
+											<string>0470B56918280AC2002D19A6</string>
+											<string>0470B56B18280AC2002D19A6</string>
+											<string>0470B56C18280AC2002D19A6</string>
+											<string>0470B57918280C04002D19A6</string>
+											<string>0470B57A18280C04002D19A6</string>
+											<string>0470B57B18280C04002D19A6</string>
+											<string>0470B57C18280C04002D19A6</string>
+											<string>0470B57D18280C04002D19A6</string>
+											<string>0470B57E18280C04002D19A6</string>
+											<string>0470B58418280C3E002D19A6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -715,8 +716,8 @@
 		<string>0470B1EC1827C213002D19A6</string>
 		<string>0470B1ED1827C213002D19A6</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>0499C0D51805815800F6937E</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/Sabrina/Documents/OpenFrameworks/of_v0.7.4_osx_release/apps/FocusFollowsGaze/blenderWindows_01/blenderWindows_01.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -1068,7 +1069,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {377, 501}}</string>
 								<key>RubberWindowFrame</key>
-								<string>1051 274 377 542 0 0 1440 878 </string>
+								<string>1042 298 377 542 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -1097,7 +1098,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>1051 274 377 542 0 0 1440 878 </string>
+			<string>1042 298 377 542 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
