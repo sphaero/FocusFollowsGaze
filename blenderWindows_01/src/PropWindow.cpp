@@ -28,6 +28,8 @@ void PropWindow::setup()
 void PropWindow::update()
 {
 	blenderWindow::update();
+	if (cmdActive && button.buttonDown)
+		taskCompleted = true;
 }
 
 void PropWindow::draw()
