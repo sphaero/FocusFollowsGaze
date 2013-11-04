@@ -17,7 +17,16 @@ class TDWindow: public blenderWindow {
 public:
 	TDWindow();
 	virtual ~TDWindow();
+	
+	void setup();
+	void draw();
+	void onKeyRelease(int key);
+	void mouseReleased(int x, int y, int button);  
+	
+	bool gorotate;
+	int rotatevar;
 
+	ofCamera cam;
 
 
 };

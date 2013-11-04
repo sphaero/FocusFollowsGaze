@@ -9,7 +9,6 @@
 #define BLENDERWINDOW_H_
 
 #include "ofxMSAInteractiveObject.h"
-#include "ofxTextInputField.h"
 
 class blenderWindow: public ofxMSAInteractiveObject {
 public:
@@ -17,17 +16,9 @@ public:
 	virtual ~blenderWindow();
 	
 	void setup();
+	void update();
 	void draw();
-	void onKeyRelease(int key);
 	
-	ofCamera cam;
-	
-	int windowType;
-	enum windowType {
-		TEXTED,
-		TDVIEW,
-		PROPERTY 
-	};	
 	int offView; //offset for 3D Viewport
 
 	// see windowState diagrams
@@ -37,7 +28,6 @@ public:
 	// time to fade back to original color
 	float coloredTime;
 	
-	ofxTextInputField multilineTextInput;
 	ofTrueTypeFont font;
 
 private:

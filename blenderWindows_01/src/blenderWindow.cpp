@@ -9,9 +9,7 @@
 
 blenderWindow::blenderWindow() {
 	// TODO Auto-generated constructor stub
-	
-	//what type of window is it: rotate, cmd or property?
-	//windowType = _windowType;
+
 
 }
 
@@ -20,26 +18,15 @@ void blenderWindow::setup() {
 	enableKeyEvents();	
 	font.loadFont("verdana.ttf", 18);
 	
-	
-	if (windowType == TEXTED) {
-		multilineTextInput.setup();
-		multilineTextInput.multiline = true;
-		multilineTextInput.setFont(font);
-		
-		multilineTextInput.bounds.x = x;
-		multilineTextInput.bounds.y = y;
-		multilineTextInput.bounds.width = width;
-		multilineTextInput.bounds.height = height;
-	} else if (windowType == TDVIEW) {
-		cam.setPosition(0, 0, 400);
-		offView = 15;
-	}
+}
+
+void blenderWindow::update() {
 	
 }
 
 void blenderWindow::draw() {
 
-	//Windows (grey)
+	//draw window (grey) with mouse over animation
 	if(isMouseOver()) {
 		ofSetColor(144, 144, 144);
 		active = true;
@@ -53,45 +40,9 @@ void blenderWindow::draw() {
 	ofNoFill();
 	ofRect(x, y, width, height); //stroke
 	
-	if (windowType == TEXTED) {
-		multilineTextInput.draw();
-	} else if (windowType == TDVIEW) {
-		
-		//Window 3D environment (black)
-		ofSetColor(50, 50, 50);
-		ofFill();
-		
-		ofRect(x+offView, y+offView, width-offView*2, height-offView*2);
-		cam.begin(ofRectangle(x+offView, y+offView, width-offView*2, height-offView*2));	
-		
-		ofPushMatrix();
-		
-		
-		if(isMouseOver()) {
-			ofRotate(x-getMouseX(), 0, 1, 0);
-		} else {
-			ofRotate(10, 0, 1, 0);
-		}
-		
-		ofSetColor(255, 0, 0);
-		ofFill();
-		ofBox(0, 0, 100, 100);
-		ofSetColor(0, 0, 0);
-		ofNoFill();
-		ofBox(0, 0, 100, 100);
-		ofPopMatrix();
-		cam.end();
-	} else if (PROPERTY) {
-		//draw poperty gui
-	}
-	
 }
 
-void blenderWindow::onKeyRelease(int key) {
-	if (key == 'r') {
-		cout << "werkt"	<< endl;
-	}
-}
+
 
 blenderWindow::~blenderWindow() {
 	// TODO Auto-generated destructor stub

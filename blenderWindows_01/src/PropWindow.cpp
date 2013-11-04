@@ -19,7 +19,8 @@ PropWindow::~PropWindow() {
 void PropWindow::setup()
 {
 	blenderWindow::setup();
-	set(0,0,ofGetWindowWidth()/5, ofGetWindowHeight());
+	
+	set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
 	button.set(10,10, 200, 50);
 	button.enableMouseEvents();
 }
