@@ -165,15 +165,15 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {770, 455}}";
 			sepNavSelRange = "{448, 0}";
-			sepNavVisRange = "{86, 384}";
+			sepNavVisRange = "{152, 344}";
 			sepNavWindowFrame = "{{15, 315}, {750, 558}}";
 		};
 	};
 	0470B2351827CAC0002D19A6 /* TDWindow.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {770, 910}}";
-			sepNavSelRange = "{1137, 0}";
-			sepNavVisRange = "{611, 447}";
+			sepNavIntBoundsRect = "{{0, 0}, {770, 1001}}";
+			sepNavSelRange = "{1114, 0}";
+			sepNavVisRange = "{847, 461}";
 		};
 	};
 	0470B2481827CC42002D19A6 /* PBXTextBookmark */ = {
@@ -447,7 +447,7 @@
 		fRef = 04C6B15D1822B6FD005D15EF /* blenderWindow.h */;
 		name = "blenderWindow.h: 47";
 		rLen = 30;
-		rLoc = 607;
+		rLoc = 630;
 		rType = 0;
 		vrLen = 441;
 		vrLoc = 369;
@@ -497,7 +497,7 @@
 		fRef = 04C6B15D1822B6FD005D15EF /* blenderWindow.h */;
 		name = "blenderWindow.h: 47";
 		rLen = 30;
-		rLoc = 607;
+		rLoc = 630;
 		rType = 0;
 		vrLen = 441;
 		vrLoc = 369;
@@ -517,7 +517,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 15";
 		rLen = 0;
-		rLoc = 1160;
+		rLoc = 1282;
 		rType = 0;
 		vrLen = 232;
 		vrLoc = 0;
@@ -577,7 +577,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 15";
 		rLen = 0;
-		rLoc = 1160;
+		rLoc = 1282;
 		rType = 0;
 		vrLen = 232;
 		vrLoc = 0;
@@ -667,7 +667,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 46";
 		rLen = 0;
-		rLoc = 944;
+		rLoc = 1002;
 		rType = 0;
 		vrLen = 440;
 		vrLoc = 0;
@@ -677,7 +677,7 @@
 		fRef = 04C6B15D1822B6FD005D15EF /* blenderWindow.h */;
 		name = "blenderWindow.h: 39";
 		rLen = 0;
-		rLoc = 547;
+		rLoc = 570;
 		rType = 0;
 		vrLen = 429;
 		vrLoc = 0;
@@ -687,7 +687,7 @@
 		fRef = 04C6B15D1822B6FD005D15EF /* blenderWindow.h */;
 		name = "blenderWindow.h: 39";
 		rLen = 0;
-		rLoc = 547;
+		rLoc = 570;
 		rType = 0;
 		vrLen = 434;
 		vrLoc = 132;
@@ -727,7 +727,7 @@
 		fRef = 04C6B15D1822B6FD005D15EF /* blenderWindow.h */;
 		name = "blenderWindow.h: 39";
 		rLen = 0;
-		rLoc = 547;
+		rLoc = 570;
 		rType = 0;
 		vrLen = 512;
 		vrLoc = 132;
@@ -747,7 +747,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 31";
 		rLen = 0;
-		rLoc = 389;
+		rLoc = 413;
 		rType = 0;
 		vrLen = 530;
 		vrLoc = 206;
@@ -757,7 +757,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 23";
 		rLen = 555;
-		rLoc = 389;
+		rLoc = 413;
 		rType = 0;
 		vrLen = 544;
 		vrLoc = 276;
@@ -767,7 +767,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 23";
 		rLen = 0;
-		rLoc = 376;
+		rLoc = 400;
 		rType = 0;
 		vrLen = 502;
 		vrLoc = 45;
@@ -827,7 +827,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 33";
 		rLen = 0;
-		rLoc = 691;
+		rLoc = 715;
 		rType = 0;
 		vrLen = 536;
 		vrLoc = 303;
@@ -837,7 +837,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 23";
 		rLen = 0;
-		rLoc = 363;
+		rLoc = 387;
 		rType = 0;
 		vrLen = 490;
 		vrLoc = 261;
@@ -877,7 +877,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 23";
 		rLen = 0;
-		rLoc = 363;
+		rLoc = 387;
 		rType = 0;
 		vrLen = 532;
 		vrLoc = 232;
@@ -887,7 +887,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 36";
 		rLen = 0;
-		rLoc = 742;
+		rLoc = 766;
 		rType = 0;
 		vrLen = 499;
 		vrLoc = 232;
@@ -927,7 +927,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 36";
 		rLen = 0;
-		rLoc = 728;
+		rLoc = 752;
 		rType = 0;
 		vrLen = 527;
 		vrLoc = 206;
@@ -937,7 +937,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 25";
 		rLen = 0;
-		rLoc = 386;
+		rLoc = 410;
 		rType = 0;
 		vrLen = 515;
 		vrLoc = 206;
@@ -947,7 +947,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 25";
 		rLen = 0;
-		rLoc = 386;
+		rLoc = 410;
 		rType = 0;
 		vrLen = 452;
 		vrLoc = 276;
@@ -1007,7 +1007,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 29";
 		rLen = 0;
-		rLoc = 457;
+		rLoc = 481;
 		rType = 0;
 		vrLen = 483;
 		vrLoc = 178;
@@ -1017,7 +1017,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 18";
 		rLen = 0;
-		rLoc = 270;
+		rLoc = 294;
 		rType = 0;
 		vrLen = 424;
 		vrLoc = 178;
@@ -1027,7 +1027,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 18";
 		rLen = 0;
-		rLoc = 273;
+		rLoc = 297;
 		rType = 0;
 		vrLen = 441;
 		vrLoc = 178;
@@ -1037,7 +1037,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 26";
 		rLen = 0;
-		rLoc = 386;
+		rLoc = 410;
 		rType = 0;
 		vrLen = 477;
 		vrLoc = 178;
@@ -1047,7 +1047,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 31";
 		rLen = 0;
-		rLoc = 459;
+		rLoc = 483;
 		rType = 0;
 		vrLen = 477;
 		vrLoc = 178;
@@ -1057,7 +1057,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 24";
 		rLen = 0;
-		rLoc = 361;
+		rLoc = 385;
 		rType = 0;
 		vrLen = 428;
 		vrLoc = 150;
@@ -1094,16 +1094,16 @@
 	};
 	0470B2FD1827DF49002D19A6 /* PropWindow.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {770, 494}}";
-			sepNavSelRange = "{300, 0}";
-			sepNavVisRange = "{0, 453}";
+			sepNavIntBoundsRect = "{{0, 0}, {770, 481}}";
+			sepNavSelRange = "{302, 0}";
+			sepNavVisRange = "{24, 432}";
 		};
 	};
 	0470B2FE1827DF49002D19A6 /* PropWindow.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {770, 339}}";
+			sepNavIntBoundsRect = "{{0, 0}, {770, 351}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 350}";
+			sepNavVisRange = "{0, 367}";
 		};
 	};
 	0470B3021827DF77002D19A6 /* PBXTextBookmark */ = {
@@ -1111,7 +1111,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 24";
 		rLen = 0;
-		rLoc = 361;
+		rLoc = 385;
 		rType = 0;
 		vrLen = 428;
 		vrLoc = 150;
@@ -1307,7 +1307,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 18";
 		rLen = 25;
-		rLoc = 249;
+		rLoc = 273;
 		rType = 0;
 		vrLen = 428;
 		vrLoc = 150;
@@ -1377,7 +1377,7 @@
 		fRef = 04C6B15D1822B6FD005D15EF /* blenderWindow.h */;
 		name = "blenderWindow.h: 39";
 		rLen = 0;
-		rLoc = 547;
+		rLoc = 570;
 		rType = 0;
 		vrLen = 430;
 		vrLoc = 326;
@@ -1417,7 +1417,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 18";
 		rLen = 25;
-		rLoc = 249;
+		rLoc = 273;
 		rType = 0;
 		vrLen = 356;
 		vrLoc = 0;
@@ -1537,7 +1537,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 18";
 		rLen = 25;
-		rLoc = 249;
+		rLoc = 273;
 		rType = 0;
 		vrLen = 356;
 		vrLoc = 0;
@@ -1577,7 +1577,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 18";
 		rLen = 25;
-		rLoc = 249;
+		rLoc = 273;
 		rType = 0;
 		vrLen = 356;
 		vrLoc = 0;
@@ -1647,7 +1647,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 18";
 		rLen = 25;
-		rLoc = 249;
+		rLoc = 273;
 		rType = 0;
 		vrLen = 356;
 		vrLoc = 0;
@@ -1657,7 +1657,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 58";
 		rLen = 0;
-		rLoc = 1031;
+		rLoc = 1089;
 		rType = 0;
 		vrLen = 413;
 		vrLoc = 578;
@@ -1687,7 +1687,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 58";
 		rLen = 0;
-		rLoc = 1031;
+		rLoc = 1089;
 		rType = 0;
 		vrLen = 429;
 		vrLoc = 147;
@@ -1777,7 +1777,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 58";
 		rLen = 0;
-		rLoc = 1031;
+		rLoc = 1089;
 		rType = 0;
 		vrLen = 356;
 		vrLoc = 0;
@@ -1847,7 +1847,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 58";
 		rLen = 0;
-		rLoc = 1031;
+		rLoc = 1089;
 		rType = 0;
 		vrLen = 356;
 		vrLoc = 0;
@@ -1947,7 +1947,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 58";
 		rLen = 0;
-		rLoc = 1031;
+		rLoc = 1089;
 		rType = 0;
 		vrLen = 356;
 		vrLoc = 0;
@@ -1957,7 +1957,7 @@
 		fRef = 0470B2FD1827DF49002D19A6 /* PropWindow.cpp */;
 		name = "PropWindow.cpp: 29";
 		rLen = 0;
-		rLoc = 356;
+		rLoc = 303;
 		rType = 0;
 		vrLen = 491;
 		vrLoc = 248;
@@ -2037,7 +2037,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 58";
 		rLen = 0;
-		rLoc = 1031;
+		rLoc = 1089;
 		rType = 0;
 		vrLen = 356;
 		vrLoc = 0;
@@ -2177,7 +2177,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 14";
 		rLen = 0;
-		rLoc = 220;
+		rLoc = 244;
 		rType = 0;
 		vrLen = 372;
 		vrLoc = 775;
@@ -2187,7 +2187,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 63";
 		rLen = 0;
-		rLoc = 1074;
+		rLoc = 1132;
 		rType = 0;
 		vrLen = 368;
 		vrLoc = 775;
@@ -2217,7 +2217,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 63";
 		rLen = 0;
-		rLoc = 1074;
+		rLoc = 1132;
 		rType = 0;
 		vrLen = 530;
 		vrLoc = 275;
@@ -2227,7 +2227,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 22";
 		rLen = 0;
-		rLoc = 334;
+		rLoc = 358;
 		rType = 0;
 		vrLen = 536;
 		vrLoc = 389;
@@ -2237,7 +2237,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 37";
 		rLen = 0;
-		rLoc = 629;
+		rLoc = 653;
 		rType = 0;
 		vrLen = 387;
 		vrLoc = 0;
@@ -2297,7 +2297,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 37";
 		rLen = 0;
-		rLoc = 629;
+		rLoc = 653;
 		rType = 0;
 		vrLen = 387;
 		vrLoc = 0;
@@ -2437,7 +2437,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 37";
 		rLen = 0;
-		rLoc = 629;
+		rLoc = 653;
 		rType = 0;
 		vrLen = 402;
 		vrLoc = 20;
@@ -2617,7 +2617,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 20";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 456;
 		vrLoc = 45;
@@ -2667,7 +2667,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 20";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 401;
 		vrLoc = 841;
@@ -2927,7 +2927,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 20";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 401;
 		vrLoc = 841;
@@ -3047,7 +3047,7 @@
 		fRef = 04C6B15D1822B6FD005D15EF /* blenderWindow.h */;
 		name = "blenderWindow.h: 29";
 		rLen = 0;
-		rLoc = 544;
+		rLoc = 567;
 		rType = 0;
 		vrLen = 504;
 		vrLoc = 133;
@@ -3097,7 +3097,7 @@
 		fRef = 04C6B15D1822B6FD005D15EF /* blenderWindow.h */;
 		name = "blenderWindow.h: 29";
 		rLen = 0;
-		rLoc = 544;
+		rLoc = 567;
 		rType = 0;
 		vrLen = 504;
 		vrLoc = 133;
@@ -3227,7 +3227,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 19";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 387;
 		vrLoc = 0;
@@ -3297,7 +3297,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 19";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 377;
 		vrLoc = 45;
@@ -3307,7 +3307,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 19";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 401;
 		vrLoc = 762;
@@ -3337,7 +3337,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 19";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 298;
 		rType = 0;
 		vrLen = 401;
 		vrLoc = 762;
@@ -3347,7 +3347,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 65";
 		rLen = 0;
-		rLoc = 1137;
+		rLoc = 1281;
 		rType = 0;
 		vrLen = 446;
 		vrLoc = 611;
@@ -3357,7 +3357,7 @@
 		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
 		name = "TDWindow.cpp: 65";
 		rLen = 0;
-		rLoc = 1137;
+		rLoc = 1281;
 		rType = 0;
 		vrLen = 447;
 		vrLoc = 611;
@@ -3392,6 +3392,13 @@
 		vrLen = 833;
 		vrLoc = 0;
 	};
+	0470B55B182809BB002D19A6 /* blenderButton.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {770, 494}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 415}";
+		};
+	};
 	0470B560182809C0002D19A6 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
@@ -3421,6 +3428,196 @@
 		rType = 0;
 		vrLen = 501;
 		vrLoc = 156;
+	};
+	0470B56918280AC2002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B1B31827BEA1002D19A6 /* blenderTask.h */;
+		name = "blenderTask.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 156;
+	};
+	0470B56A18280AC2002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2341827CAC0002D19A6 /* TDWindow.h */;
+		name = "TDWindow.h: 27";
+		rLen = 0;
+		rLoc = 448;
+		rType = 0;
+		vrLen = 384;
+		vrLoc = 86;
+	};
+	0470B56B18280AC2002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B55B182809BB002D19A6 /* blenderButton.cpp */;
+		name = "blenderButton.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 415;
+		vrLoc = 0;
+	};
+	0470B56C18280AC2002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
+		name = "testApp.cpp: 24";
+		rLen = 0;
+		rLoc = 764;
+		rType = 0;
+		vrLen = 902;
+		vrLoc = 2421;
+	};
+	0470B56D18280AC2002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2FD1827DF49002D19A6 /* PropWindow.cpp */;
+		name = "PropWindow.cpp: 23";
+		rLen = 0;
+		rLoc = 302;
+		rType = 0;
+		vrLen = 457;
+		vrLoc = 24;
+	};
+	0470B57318280B09002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2FD1827DF49002D19A6 /* PropWindow.cpp */;
+		name = "PropWindow.cpp: 23";
+		rLen = 0;
+		rLoc = 302;
+		rType = 0;
+		vrLen = 404;
+		vrLoc = 24;
+	};
+	0470B57918280C04002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2FD1827DF49002D19A6 /* PropWindow.cpp */;
+		name = "PropWindow.cpp: 23";
+		rLen = 0;
+		rLoc = 302;
+		rType = 0;
+		vrLen = 432;
+		vrLoc = 24;
+	};
+	0470B57A18280C04002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2341827CAC0002D19A6 /* TDWindow.h */;
+		name = "TDWindow.h: 27";
+		rLen = 0;
+		rLoc = 448;
+		rType = 0;
+		vrLen = 344;
+		vrLoc = 152;
+	};
+	0470B57B18280C04002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B3091827E11A002D19A6 /* TXTWindow.h */;
+		name = "TXTWindow.h: 22";
+		rLen = 0;
+		rLoc = 357;
+		rType = 0;
+		vrLen = 403;
+		vrLoc = 41;
+	};
+	0470B57C18280C04002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2FE1827DF49002D19A6 /* PropWindow.h */;
+		name = "PropWindow.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 367;
+		vrLoc = 0;
+	};
+	0470B57D18280C04002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 04C6B15C1822B6FD005D15EF /* blenderWindow.cpp */;
+		name = "blenderWindow.cpp: 34";
+		rLen = 0;
+		rLoc = 563;
+		rType = 0;
+		vrLen = 449;
+		vrLoc = 327;
+	};
+	0470B57E18280C04002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 04C6B15D1822B6FD005D15EF /* blenderWindow.h */;
+		name = "blenderWindow.h: 29";
+		rLen = 0;
+		rLoc = 567;
+		rType = 0;
+		vrLen = 467;
+		vrLoc = 170;
+	};
+	0470B57F18280C04002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
+		name = "TDWindow.cpp: 65";
+		rLen = 0;
+		rLoc = 1281;
+		rType = 0;
+		vrLen = 393;
+		vrLoc = 794;
+	};
+	0470B58418280C3E002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
+		name = "TDWindow.cpp: 65";
+		rLen = 0;
+		rLoc = 1281;
+		rType = 0;
+		vrLen = 394;
+		vrLoc = 794;
+	};
+	0470B58518280C3E002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
+		name = "TDWindow.cpp: 15";
+		rLen = 0;
+		rLoc = 244;
+		rType = 0;
+		vrLen = 391;
+		vrLoc = 818;
+	};
+	0470B58918280C69002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
+		name = "TDWindow.cpp: 56";
+		rLen = 0;
+		rLoc = 1001;
+		rType = 0;
+		vrLen = 415;
+		vrLoc = 858;
+	};
+	0470B58D18280C8D002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
+		name = "TDWindow.cpp: 71";
+		rLen = 0;
+		rLoc = 1280;
+		rType = 0;
+		vrLen = 402;
+		vrLoc = 847;
+	};
+	0470B59118280CB7002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
+		name = "TDWindow.cpp: 68";
+		rLen = 0;
+		rLoc = 1256;
+		rType = 0;
+		vrLen = 437;
+		vrLoc = 847;
+	};
+	0470B59318280CCF002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */;
+		name = "TDWindow.cpp: 64";
+		rLen = 0;
+		rLoc = 1114;
+		rType = 0;
+		vrLen = 461;
+		vrLoc = 847;
 	};
 	0499C0AA1805815600F6937E /* blenderWindows_01 */ = {
 		isa = PBXExecutable;
@@ -3470,7 +3667,7 @@
 	};
 	04C6B15C1822B6FD005D15EF /* blenderWindow.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {770, 741}}";
+			sepNavIntBoundsRect = "{{0, 0}, {770, 728}}";
 			sepNavSelRange = "{563, 0}";
 			sepNavVisRange = "{327, 449}";
 			sepNavWindowFrame = "{{61, 273}, {750, 558}}";
@@ -3478,9 +3675,9 @@
 	};
 	04C6B15D1822B6FD005D15EF /* blenderWindow.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {770, 494}}";
-			sepNavSelRange = "{544, 0}";
-			sepNavVisRange = "{133, 504}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 520}}";
+			sepNavSelRange = "{496, 0}";
+			sepNavVisRange = "{54, 576}";
 			sepNavWindowFrame = "{{38, 294}, {750, 558}}";
 		};
 	};
@@ -3977,6 +4174,25 @@
 			0470B560182809C0002D19A6 /* PBXTextBookmark */ = 0470B560182809C0002D19A6 /* PBXTextBookmark */;
 			0470B561182809C0002D19A6 /* PBXTextBookmark */ = 0470B561182809C0002D19A6 /* PBXTextBookmark */;
 			0470B562182809C0002D19A6 /* PBXTextBookmark */ = 0470B562182809C0002D19A6 /* PBXTextBookmark */;
+			0470B56918280AC2002D19A6 /* PBXTextBookmark */ = 0470B56918280AC2002D19A6 /* PBXTextBookmark */;
+			0470B56A18280AC2002D19A6 /* PBXTextBookmark */ = 0470B56A18280AC2002D19A6 /* PBXTextBookmark */;
+			0470B56B18280AC2002D19A6 /* PBXTextBookmark */ = 0470B56B18280AC2002D19A6 /* PBXTextBookmark */;
+			0470B56C18280AC2002D19A6 /* PBXTextBookmark */ = 0470B56C18280AC2002D19A6 /* PBXTextBookmark */;
+			0470B56D18280AC2002D19A6 /* PBXTextBookmark */ = 0470B56D18280AC2002D19A6 /* PBXTextBookmark */;
+			0470B57318280B09002D19A6 /* PBXTextBookmark */ = 0470B57318280B09002D19A6 /* PBXTextBookmark */;
+			0470B57918280C04002D19A6 /* PBXTextBookmark */ = 0470B57918280C04002D19A6 /* PBXTextBookmark */;
+			0470B57A18280C04002D19A6 /* PBXTextBookmark */ = 0470B57A18280C04002D19A6 /* PBXTextBookmark */;
+			0470B57B18280C04002D19A6 /* PBXTextBookmark */ = 0470B57B18280C04002D19A6 /* PBXTextBookmark */;
+			0470B57C18280C04002D19A6 /* PBXTextBookmark */ = 0470B57C18280C04002D19A6 /* PBXTextBookmark */;
+			0470B57D18280C04002D19A6 /* PBXTextBookmark */ = 0470B57D18280C04002D19A6 /* PBXTextBookmark */;
+			0470B57E18280C04002D19A6 /* PBXTextBookmark */ = 0470B57E18280C04002D19A6 /* PBXTextBookmark */;
+			0470B57F18280C04002D19A6 /* PBXTextBookmark */ = 0470B57F18280C04002D19A6 /* PBXTextBookmark */;
+			0470B58418280C3E002D19A6 /* PBXTextBookmark */ = 0470B58418280C3E002D19A6 /* PBXTextBookmark */;
+			0470B58518280C3E002D19A6 /* PBXTextBookmark */ = 0470B58518280C3E002D19A6 /* PBXTextBookmark */;
+			0470B58918280C69002D19A6 /* PBXTextBookmark */ = 0470B58918280C69002D19A6 /* PBXTextBookmark */;
+			0470B58D18280C8D002D19A6 /* PBXTextBookmark */ = 0470B58D18280C8D002D19A6 /* PBXTextBookmark */;
+			0470B59118280CB7002D19A6 /* PBXTextBookmark */ = 0470B59118280CB7002D19A6 /* PBXTextBookmark */;
+			0470B59318280CCF002D19A6 /* PBXTextBookmark */ = 0470B59318280CCF002D19A6 /* PBXTextBookmark */;
 			04C6B1701822B74F005D15EF = 04C6B1701822B74F005D15EF /* PBXTextBookmark */;
 			04C6B17D1822B75E005D15EF = 04C6B17D1822B75E005D15EF /* PBXTextBookmark */;
 			04C6B35D18240D12005D15EF = 04C6B35D18240D12005D15EF /* PBXTextBookmark */;
@@ -4004,7 +4220,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {770, 1755}}";
 			sepNavSelRange = "{764, 0}";
-			sepNavVisRange = "{0, 833}";
+			sepNavVisRange = "{2421, 902}";
 			sepNavWindowFrame = "{{61, 273}, {750, 558}}";
 		};
 	};
