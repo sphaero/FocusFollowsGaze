@@ -33,7 +33,7 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
 	
-	drawGaze();
+	//drawGaze();
 }
 
 void testApp::receiveGazeCoords()

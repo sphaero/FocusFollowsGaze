@@ -20,33 +20,18 @@ void PropWindow::setup()
 {
 	blenderWindow::setup();
 	
-	button.set(10,10, 200, 50);
+	set(0,0,ofGetWindowWidth()/5, ofGetWindowHeight());
+	button.set(2,2, ofGetWindowWidth()/5-4, ofGetWindowHeight()/30);
 	button.enableMouseEvents();
 }
 
 void PropWindow::update()
 {
 	blenderWindow::update();
-	if ( button.isMousePressed() )
-	{
-		ofLogVerbose() << "BUTTON PRESSSED!!!";
-	}
 }
 
 void PropWindow::draw()
 {
 	blenderWindow::draw();
-	if ( button.isMouseOver() )
-	{
-		ofLogVerbose() << "MOUSE OVER!!!";
-		ofSetColor(255,0,0);
-		ofFill();
-		ofRect((ofRectangle)button);
-	}
-	else
-	{
-		ofSetColor(0,255,0);
-		ofFill();
-		ofRect((ofRectangle)button);
-	}
+	button.draw();
 }
