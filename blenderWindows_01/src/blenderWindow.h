@@ -13,11 +13,21 @@
 
 class blenderWindow: public ofxMSAInteractiveObject {
 public:
-	blenderWindow();
+	blenderWindow(int _windowType);
 	virtual ~blenderWindow();
 	
 	void setup();
 	void draw();
+	
+	ofCamera cam;
+	
+	int windowType;
+	enum windowType {
+		TEXTED,
+		TDVIEW,
+		PROPERTY 
+	};	
+	int offView; //offset for 3D Viewport
 
 	// see windowState diagrams
 	bool cmdActive;

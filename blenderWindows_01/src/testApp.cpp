@@ -20,7 +20,7 @@ void testApp::setup(){
 	testWindow = new blenderWindow*[nWindows];
 	
 	for (int i =  0; i < nWindows; i++) {
-		testWindow[i] = new blenderWindow();
+		testWindow[i] = new blenderWindow(int(ofRandom(2)));
 	}
 	
 	//set custom size for every window

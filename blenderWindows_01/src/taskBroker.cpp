@@ -12,6 +12,8 @@ taskBroker::taskBroker()
 	// TODO Auto-generated constructor stub
 	currentTask = NULL;
 	nextTaskDeparture = 0;
+	randomDelayMax = 2.0f;
+	
 }
 
 taskBroker::~taskBroker()
@@ -22,6 +24,7 @@ taskBroker::~taskBroker()
 void taskBroker::setup()
 {
 	//initialise possible tasks
+	
 
 }
 
