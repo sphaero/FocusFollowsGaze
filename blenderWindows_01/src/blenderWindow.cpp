@@ -7,16 +7,17 @@
 
 #include "blenderWindow.h"
 
-blenderWindow::blenderWindow(int _windowType) {
+blenderWindow::blenderWindow() {
 	// TODO Auto-generated constructor stub
 	
 	//what type of window is it: rotate, cmd or property?
-	windowType = _windowType;
+	//windowType = _windowType;
 
 }
 
 void blenderWindow::setup() {
 	enableMouseEvents();	
+	enableKeyEvents();	
 	font.loadFont("verdana.ttf", 18);
 	
 	
@@ -38,7 +39,6 @@ void blenderWindow::setup() {
 
 void blenderWindow::draw() {
 
-	
 	//Windows (grey)
 	if(isMouseOver()) {
 		ofSetColor(144, 144, 144);
@@ -65,6 +65,8 @@ void blenderWindow::draw() {
 		cam.begin(ofRectangle(x+offView, y+offView, width-offView*2, height-offView*2));	
 		
 		ofPushMatrix();
+		
+		
 		if(isMouseOver()) {
 			ofRotate(x-getMouseX(), 0, 1, 0);
 		} else {
@@ -83,6 +85,12 @@ void blenderWindow::draw() {
 		//draw poperty gui
 	}
 	
+}
+
+void blenderWindow::onKeyRelease(int key) {
+	if (key == 'r') {
+		cout << "werkt"	<< endl;
+	}
 }
 
 blenderWindow::~blenderWindow() {

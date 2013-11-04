@@ -20,8 +20,9 @@ void testApp::setup(){
 	testWindow = new blenderWindow*[nWindows];
 	
 	for (int i =  0; i < nWindows; i++) {
-		testWindow[i] = new blenderWindow(int(ofRandom(2)));
+		testWindow[i] = new blenderWindow();
 	}
+	
 
 }
 
@@ -82,9 +83,14 @@ void testApp::keyReleased(int key){
 	case 'l':
 		broker.outputResults();
 		break;
+	case 'f':
+		ofToggleFullscreen();
+		break;
+
 	default:
 		break;
 	}
+	
 }
 
 //--------------------------------------------------------------
@@ -114,26 +120,7 @@ void testApp::windowResized(int w, int h){
 	testWindow[1]->set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
 	testWindow[2]->set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
 	testWindow[3]->set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
-	//dimensions for Blender mock-up
-//	multilineTextInput[0].bounds.x = 0;
-//	multilineTextInput[0].bounds.y = 0;
-//	multilineTextInput[0].bounds.width = ofGetWindowWidth()/4;
-//	multilineTextInput[0].bounds.height = ofGetWindowHeight()/4*3;
-//
-//	multilineTextInput[1].bounds.x = ofGetWindowWidth()/4*3;
-//	multilineTextInput[1].bounds.y = 0;
-//	multilineTextInput[1].bounds.width = ofGetWindowWidth()/4;
-//	multilineTextInput[1].bounds.height = ofGetWindowHeight()/4*3;
-//
-//	multilineTextInput[2].bounds.x = 0;
-//	multilineTextInput[2].bounds.y = ofGetWindowHeight()/4*3;
-//	multilineTextInput[2].bounds.width = ofGetWindowWidth();
-//	multilineTextInput[2].bounds.height = ofGetWindowHeight()/4;
-//
-//	multilineTextInput[3].bounds.x = ofGetWindowWidth()/4;
-//	multilineTextInput[3].bounds.y = 0;
-//	multilineTextInput[3].bounds.width = ofGetWindowWidth()/2;
-//	multilineTextInput[3].bounds.height = ofGetWindowHeight()/4*3;
+
 
 }
 

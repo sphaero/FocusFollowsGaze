@@ -13,11 +13,12 @@
 
 class blenderWindow: public ofxMSAInteractiveObject {
 public:
-	blenderWindow(int _windowType);
+	blenderWindow();
 	virtual ~blenderWindow();
 	
 	void setup();
 	void draw();
+	void onKeyRelease(int key);
 	
 	ofCamera cam;
 	
@@ -30,9 +31,9 @@ public:
 	int offView; //offset for 3D Viewport
 
 	// see windowState diagrams
-	bool cmdActive;
-	bool active;
-	bool coloredActive;
+	bool cmdActive; 
+	bool active; //is window active
+	bool coloredActive; //for color only
 	// time to fade back to original color
 	float coloredTime;
 	
