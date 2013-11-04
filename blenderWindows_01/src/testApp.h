@@ -6,6 +6,7 @@
 #include "taskBroker.h"
 #include "blenderWindow.h"
 #include "TDWindow.h"
+#include "PropWindow.h"
 
 #define OG_UDP_PORT 20320
 
@@ -36,8 +37,8 @@ public:
 	
 	//
 	//TXTWindow mytxtWindow;
-	TDWindow mytdWindow;
-	//PROPWindow  mypropWindow;
+	//TDWindow mytdWindow;
+	PropWindow 		mypropWindow;
 
 	taskBroker		broker;
 

@@ -9,6 +9,7 @@
 #define PROPWINDOW_H_
 
 #include "blenderWindow.h"
+#include "blenderButton.h"
 
 class PropWindow: public blenderWindow {
 public:
@@ -19,7 +20,7 @@ public:
 	void update();
 	void draw();
 
-	ofxMSAInteractiveObject button;
+	blenderButton button;
 };
 
 #endif /* PROPWINDOW_H_ */
