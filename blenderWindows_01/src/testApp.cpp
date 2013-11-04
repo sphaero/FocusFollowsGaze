@@ -22,12 +22,6 @@ void testApp::setup(){
 	for (int i =  0; i < nWindows; i++) {
 		testWindow[i] = new blenderWindow(int(ofRandom(2)));
 	}
-	
-	//set custom size for every window
-	testWindow[0]->set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
-	testWindow[1]->set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
-	testWindow[2]->set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
-	testWindow[3]->set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
 
 }
 
@@ -115,6 +109,11 @@ void testApp::mouseReleased(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::windowResized(int w, int h){
+	//set custom size for every window
+	testWindow[0]->set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
+	testWindow[1]->set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
+	testWindow[2]->set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
+	testWindow[3]->set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
 	//dimensions for Blender mock-up
 //	multilineTextInput[0].bounds.x = 0;
 //	multilineTextInput[0].bounds.y = 0;
