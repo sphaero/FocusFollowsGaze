@@ -1,11 +1,11 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxTextInputField.h"
 #include "ofxUDPManager.h"
 #include "taskBroker.h"
-#include "blenderWindow.h"
+
 #include "TDWindow.h"
+#include "TXTWindow.h"
 #include "PropWindow.h"
 
 #define OG_UDP_PORT 20320
@@ -32,13 +32,10 @@ public:
 	void			receiveGazeCoords();
 	void			drawGaze();
 	
-	int nWindows;
-	blenderWindow** testWindow;
-	
-	//
-	//TXTWindow mytxtWindow;
-	//TDWindow mytdWindow;
-	PropWindow 		mypropWindow;
+	//Diffent window types
+	TXTWindow mytxtWindow;
+	TDWindow mytdWindow;
+	PropWindow  mypropWindow;
 
 	taskBroker		broker;
 

@@ -146,6 +146,7 @@ void ofxTextInputField::draw() {
     
 	ofPushMatrix();
 	ofTranslate(bounds.x, bounds.y);
+	//cout << bounds.y << endl;
 	
 	if(selecting) {
 		

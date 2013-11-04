@@ -267,12 +267,13 @@
 								<string>E4B69E1C0A3A1BDC003C02F2</string>
 								<string>04E9078C182288CC000B0160</string>
 								<string>04C6B1681822B728005D15EF</string>
+								<string>04E907A818228967000B0160</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>6</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -327,26 +328,30 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0470B27B1827CE88002D19A6</string>
+										<string>0470B49D1827FD5A002D19A6</string>
 										<key>history</key>
 										<array>
 											<string>0439AA27180EC97C0002D60E</string>
 											<string>04E2598F18228CA900E58706</string>
 											<string>04C6B1701822B74F005D15EF</string>
-											<string>04C6B35D18240D12005D15EF</string>
-											<string>04C6B37818240E42005D15EF</string>
 											<string>0470B1CD1827C1AA002D19A6</string>
 											<string>0470B25E1827CD1A002D19A6</string>
-											<string>0470B25F1827CD1A002D19A6</string>
-											<string>0470B2601827CD1A002D19A6</string>
-											<string>0470B26C1827CDE2002D19A6</string>
-											<string>0470B26D1827CDE2002D19A6</string>
-											<string>0470B2701827CDE2002D19A6</string>
 											<string>0470B2711827CDE2002D19A6</string>
-											<string>0470B2781827CE88002D19A6</string>
-											<string>0470B2791827CE88002D19A6</string>
-											<string>0470B27A1827CE88002D19A6</string>
-											<string>0470B26E1827CDE2002D19A6</string>
+											<string>0470B2851827D01A002D19A6</string>
+											<string>0470B29B1827D1DE002D19A6</string>
+											<string>0470B4291827F418002D19A6</string>
+											<string>0470B42A1827F418002D19A6</string>
+											<string>0470B43D1827F79E002D19A6</string>
+											<string>0470B44A1827FA54002D19A6</string>
+											<string>0470B4651827FB89002D19A6</string>
+											<string>0470B4911827FD44002D19A6</string>
+											<string>0470B4921827FD44002D19A6</string>
+											<string>0470B4931827FD44002D19A6</string>
+											<string>0470B4941827FD44002D19A6</string>
+											<string>0470B4951827FD44002D19A6</string>
+											<string>0470B4961827FD44002D19A6</string>
+											<string>0470B4971827FD44002D19A6</string>
+											<string>0470B4981827FD44002D19A6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -711,7 +716,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>0470B27C1827CE88002D19A6</string>
+		<string>0470B49E1827FD5A002D19A6</string>
 		<string>0470B1EC1827C213002D19A6</string>
 		<string>0470B1ED1827C213002D19A6</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -812,7 +817,7 @@
 			<key>WindowToolGUID</key>
 			<string>0499C0D51805815800F6937E</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
