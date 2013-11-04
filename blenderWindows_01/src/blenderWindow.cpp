@@ -9,7 +9,7 @@
 
 blenderWindow::blenderWindow() {
 	// TODO Auto-generated constructor stub
-
+	coloredActive = false;
 
 }
 
@@ -30,6 +30,9 @@ void blenderWindow::draw() {
 	if(isMouseOver()) {
 		ofSetColor(144, 144, 144);
 		active = true;
+	} else 	if (coloredActive) {
+		ofSetColor(255, 123, 25);
+		//colorTimer = 0;
 	} else {
 		ofSetColor(104, 104, 104);
 		active = false;
@@ -39,6 +42,8 @@ void blenderWindow::draw() {
 	ofSetColor(0, 0, 0);
 	ofNoFill();
 	ofRect(x, y, width, height); //stroke
+	
+
 	
 }
 

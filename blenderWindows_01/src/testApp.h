@@ -33,7 +33,8 @@ public:
 	void			drawGaze();
 	
 	//Diffent window types
-	TXTWindow mytxtWindow;
+	TXTWindow mytxtWindow1;
+	TXTWindow mytxtWindow2;
 	TDWindow mytdWindow;
 	PropWindow  mypropWindow;
 

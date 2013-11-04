@@ -16,6 +16,11 @@ void testApp::setup(){
 	gazeCoords[0] = -1;
 	gazeCoords[1] = -1;
 	
+	mypropWindow.set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
+	mytdWindow.set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
+	mytxtWindow1.set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
+	mytxtWindow2.set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
+
 
 }
 
@@ -76,10 +81,10 @@ void testApp::keyReleased(int key){
 	case 'l':
 		broker.outputResults();
 		break;
-	case 'f':
+	case OF_KEY_UP: //change to alt + F11?
 		ofToggleFullscreen();
 		break;
-
+				
 	default:
 		break;
 	}
@@ -108,11 +113,14 @@ void testApp::mouseReleased(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::windowResized(int w, int h){
+	mypropWindow.set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
 	mypropWindow.setup();
-	mytxtWindow.setup();
+	mytdWindow.set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
 	mytdWindow.setup();
-
-
+	mytxtWindow1.set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
+	mytxtWindow1.setup();
+	mytxtWindow2.set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
+	mytxtWindow2.setup();
 }
 
 //--------------------------------------------------------------

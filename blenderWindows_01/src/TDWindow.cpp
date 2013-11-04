@@ -17,8 +17,6 @@ TDWindow::TDWindow() {
 void TDWindow::setup() {
 	blenderWindow::setup();
 
-	set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
-
 	cam.setPosition(0, 0, 400);
 	offView = 15;
 	rotatevar = 0;
@@ -64,6 +62,7 @@ void TDWindow::onKeyRelease(int key) {
 
 void TDWindow::mouseReleased(int x, int y, int button) {
 	gorotate = false;
+	//taskCompleted = true;
 }
 
 TDWindow::~TDWindow() {
