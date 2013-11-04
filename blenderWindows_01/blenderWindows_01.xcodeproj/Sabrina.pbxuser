@@ -3392,6 +3392,36 @@
 		vrLen = 833;
 		vrLoc = 0;
 	};
+	0470B560182809C0002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
+		name = "testApp.cpp: 24";
+		rLen = 0;
+		rLoc = 764;
+		rType = 0;
+		vrLen = 833;
+		vrLoc = 0;
+	};
+	0470B561182809C0002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B1B31827BEA1002D19A6 /* blenderTask.h */;
+		name = "blenderTask.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 156;
+	};
+	0470B562182809C0002D19A6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0470B1B31827BEA1002D19A6 /* blenderTask.h */;
+		name = "blenderTask.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 501;
+		vrLoc = 156;
+	};
 	0499C0AA1805815600F6937E /* blenderWindows_01 */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -3944,6 +3974,9 @@
 			0470B5561828093B002D19A6 /* PBXTextBookmark */ = 0470B5561828093B002D19A6 /* PBXTextBookmark */;
 			0470B5571828093B002D19A6 /* PBXTextBookmark */ = 0470B5571828093B002D19A6 /* PBXTextBookmark */;
 			0470B5581828093B002D19A6 /* PBXTextBookmark */ = 0470B5581828093B002D19A6 /* PBXTextBookmark */;
+			0470B560182809C0002D19A6 /* PBXTextBookmark */ = 0470B560182809C0002D19A6 /* PBXTextBookmark */;
+			0470B561182809C0002D19A6 /* PBXTextBookmark */ = 0470B561182809C0002D19A6 /* PBXTextBookmark */;
+			0470B562182809C0002D19A6 /* PBXTextBookmark */ = 0470B562182809C0002D19A6 /* PBXTextBookmark */;
 			04C6B1701822B74F005D15EF = 04C6B1701822B74F005D15EF /* PBXTextBookmark */;
 			04C6B17D1822B75E005D15EF = 04C6B17D1822B75E005D15EF /* PBXTextBookmark */;
 			04C6B35D18240D12005D15EF = 04C6B35D18240D12005D15EF /* PBXTextBookmark */;

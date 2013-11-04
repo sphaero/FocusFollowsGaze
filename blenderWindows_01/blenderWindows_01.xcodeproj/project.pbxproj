@@ -11,6 +11,7 @@
 		0470B2361827CAC0002D19A6 /* TDWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */; };
 		0470B2FF1827DF49002D19A6 /* PropWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0470B2FD1827DF49002D19A6 /* PropWindow.cpp */; };
 		0470B30B1827E11A002D19A6 /* TXTWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0470B30A1827E11A002D19A6 /* TXTWindow.cpp */; };
+		0470B55D182809BB002D19A6 /* blenderButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0470B55B182809BB002D19A6 /* blenderButton.cpp */; };
 		04C6B15E1822B6FD005D15EF /* blenderWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B15C1822B6FD005D15EF /* blenderWindow.cpp */; };
 		04C6B16B1822B728005D15EF /* ofxMSAInteractiveObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B1691822B728005D15EF /* ofxMSAInteractiveObject.cpp */; };
 		04C6B35C18240D0E005D15EF /* taskBroker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B35A18240D0E005D15EF /* taskBroker.cpp */; };
@@ -80,6 +81,8 @@
 		0470B2FE1827DF49002D19A6 /* PropWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropWindow.h; sourceTree = "<group>"; };
 		0470B3091827E11A002D19A6 /* TXTWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXTWindow.h; sourceTree = "<group>"; };
 		0470B30A1827E11A002D19A6 /* TXTWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TXTWindow.cpp; sourceTree = "<group>"; };
+		0470B55B182809BB002D19A6 /* blenderButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blenderButton.cpp; sourceTree = "<group>"; };
+		0470B55C182809BB002D19A6 /* blenderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blenderButton.h; sourceTree = "<group>"; };
 		04C6B15C1822B6FD005D15EF /* blenderWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blenderWindow.cpp; sourceTree = "<group>"; };
 		04C6B15D1822B6FD005D15EF /* blenderWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blenderWindow.h; sourceTree = "<group>"; };
 		04C6B1691822B728005D15EF /* ofxMSAInteractiveObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMSAInteractiveObject.cpp; sourceTree = "<group>"; };
@@ -279,6 +282,8 @@
 				04C6B35A18240D0E005D15EF /* taskBroker.cpp */,
 				0470B1B31827BEA1002D19A6 /* blenderTask.h */,
 				0470B1B21827BEA1002D19A6 /* blenderTask.cpp */,
+				0470B55C182809BB002D19A6 /* blenderButton.h */,
+				0470B55B182809BB002D19A6 /* blenderButton.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -390,6 +395,7 @@
 				0470B2361827CAC0002D19A6 /* TDWindow.cpp in Sources */,
 				0470B2FF1827DF49002D19A6 /* PropWindow.cpp in Sources */,
 				0470B30B1827E11A002D19A6 /* TXTWindow.cpp in Sources */,
+				0470B55D182809BB002D19A6 /* blenderButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

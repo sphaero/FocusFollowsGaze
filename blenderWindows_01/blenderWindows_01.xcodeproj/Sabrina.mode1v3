@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -271,7 +273,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
+									<integer>20</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -307,14 +309,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>testApp.cpp</string>
+								<string>blenderTask.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,17 +322,16 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>testApp.cpp</string>
+										<string>blenderTask.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0470B5581828093B002D19A6</string>
+										<string>0470B562182809C0002D19A6</string>
 										<key>history</key>
 										<array>
 											<string>0439AA27180EC97C0002D60E</string>
 											<string>04E2598F18228CA900E58706</string>
 											<string>04C6B1701822B74F005D15EF</string>
-											<string>0470B1CD1827C1AA002D19A6</string>
 											<string>0470B25E1827CD1A002D19A6</string>
 											<string>0470B2711827CDE2002D19A6</string>
 											<string>0470B2851827D01A002D19A6</string>
@@ -347,7 +346,8 @@
 											<string>0470B5551828093B002D19A6</string>
 											<string>0470B5561828093B002D19A6</string>
 											<string>0470B5571828093B002D19A6</string>
-											<string>0470B54B182807CC002D19A6</string>
+											<string>0470B560182809C0002D19A6</string>
+											<string>0470B561182809C0002D19A6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -715,8 +715,8 @@
 		<string>0470B1EC1827C213002D19A6</string>
 		<string>0470B1ED1827C213002D19A6</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>0499C0D51805815800F6937E</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>0499C0D51805815800F6937E</string>
 		<string>/Users/Sabrina/Documents/OpenFrameworks/of_v0.7.4_osx_release/apps/FocusFollowsGaze/blenderWindows_01/blenderWindows_01.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
