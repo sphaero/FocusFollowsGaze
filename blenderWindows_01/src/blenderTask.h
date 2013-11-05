@@ -24,6 +24,8 @@ public:
 		SHORTCUTERR
 	};
 
+	static int 				count;
+	int						countId;
 	blenderWindow* 			correspondingWindow;
 	float					timeOut;
 	float					startTime;
@@ -32,6 +34,7 @@ public:
 
 	blenderWindow* 	getCorrespondingWindow() { return correspondingWindow; }
 	void			setCorrespondingWindow(blenderWindow &window) { correspondingWindow = &window; }
+
 };
 
 #endif /* BLENDERTASK_H_ */

@@ -8,7 +8,6 @@
 #include "blenderWindow.h"
 
 blenderWindow::blenderWindow() {
-	// TODO Auto-generated constructor stub
 	coloredActive = false;
 	windowColor = ofColor(104, 104, 104);
 	activeWindowColor = ofColor(144, 144, 144);

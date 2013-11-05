@@ -20,20 +20,10 @@ taskBroker::~taskBroker()
 	// TODO Auto-generated destructor stub
 }
 
-void taskBroker::setup()
-{
-	//initialise possible tasks
-
-}
-
-void taskBroker::start()
-{
-	//start deploying tasks
-}
-
 void taskBroker::update() {
 	//check if current task is completed and delay has passed
 	float curTime = ofGetElapsedTimef();
+	// we are running as long as we have a pointer to a task
 	if (currentTask)
 	{
 		if (!currentTask->correspondingWindow)
@@ -98,7 +88,6 @@ void taskBroker::resetTaskWindow()
 void taskBroker::saveCurrentTask()
 {
 	measuredTasks.push_back(currentTask);
-
 	//ofLogVerbose() << "task finished at: " << currentTask->endTime
 	//		<< " started at: " << currentTask->startTime
 	//		<< " status = " << currentTask->result;
@@ -108,18 +97,24 @@ void taskBroker::saveCurrentTask()
 
 void taskBroker::newTask()
 {
-	currentTask = new blenderTask();
-	int i = floor(ofRandom(tasks.size()-0.1));
-	currentTask->correspondingWindow = tasks.at(i)->correspondingWindow;
-	currentTask->correspondingWindow->coloredActive = true;
+	// reset all the windows to a sane state
 	vector<blenderTask*>::iterator it = tasks.begin();
 	while (it != tasks.end())
 	{
 		(*it)->correspondingWindow->cmdActive = false;
 		++it;
 	}
-	currentTask->correspondingWindow->cmdActive = true;
 
+	// create a new task
+	currentTask = new blenderTask();
+
+	// pick a random task from the pool
+	int i = floor(ofRandom(tasks.size()-0.1));
+	// from the picked task we copy the pointer to the window
+	currentTask->correspondingWindow = tasks.at(i)->correspondingWindow;
+	// mark the window to be colored (color cue) and set cmdActive
+	currentTask->correspondingWindow->coloredActive = true;
+	currentTask->correspondingWindow->cmdActive = true;
 }
 
 void taskBroker::outputResults()
@@ -127,10 +122,18 @@ void taskBroker::outputResults()
 	std::vector<blenderTask*>::iterator it = measuredTasks.begin();
 	while (it != measuredTasks.end())
 	{
-		ofLogVerbose() << "task finished at: " << (*it)->endTime
-					<< " started at: " << (*it)->startTime
-					<< " status = " << (*it)->result;
-		it++;
+		if ((*it)->result == blenderTask::TIMEOUT)
+		{
+			ofLogVerbose() << (*it)->countId << ": task timed out";
+		}
+		else
+		{
+			float t = (*it)->endTime - (*it)->startTime;
+			cout.setf(ios::fixed);
+			ofLogVerbose() << (*it)->countId << ": task finished in:\t" << setprecision(4) << t
+					<< " status:\t " << (*it)->result;
+		}
+		++it;
 	}
 }
 

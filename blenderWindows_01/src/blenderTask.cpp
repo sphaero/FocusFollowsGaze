@@ -7,7 +7,12 @@
 
 #include "blenderTask.h"
 
+// initialise the counter
+int blenderTask::count = 0;
+
 blenderTask::blenderTask() {
+	count++;
+	countId = count;
 	// TODO Auto-generated constructor stub
 	startTime = ofGetElapsedTimef();
 	endTime = 0.f;
