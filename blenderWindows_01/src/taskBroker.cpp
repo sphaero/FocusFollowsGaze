@@ -47,14 +47,16 @@ void taskBroker::update() {
 			{
 				currentTask->endTime = curTime;
 				determineResult();
+				resetTaskWindow();
 				saveCurrentTask();
 			}
 			//check for timeout
-			if (currentTask->startTime + currentTask->timeOut < curTime )
+			else if (currentTask->startTime + currentTask->timeOut < curTime )
 			{
-				ofLogVerbose() << "task timeout";
+				ofLogVerbose() << "task timeout " << currentTask->correspondingWindow->taskCompleted;
 				currentTask->endTime = curTime;
 				currentTask->result = blenderTask::TIMEOUT;
+				resetTaskWindow();
 				saveCurrentTask();
 			}
 		}
@@ -71,18 +73,26 @@ void taskBroker::determineResult()
 	if (currentTask->correspondingWindow->active &&
 			currentTask->correspondingWindow->taskCompleted )
 	{
+		ofLogVerbose() << "task COMPLETED";
 		currentTask->result = blenderTask::CORRECT;
 	}
 	// task wrong window
 	else if (currentTask->correspondingWindow->active &&
 			currentTask->correspondingWindow->taskCompleted )
 	{
+		ofLogVerbose() << "task wrong window";
 		currentTask->result = blenderTask::WINDOWERR;
 	}
 	// task probably wrong shortcut
 	else {
+		ofLogVerbose() << "task shortcut error";
 		currentTask->result = blenderTask::SHORTCUTERR;
 	}
+}
+
+void taskBroker::resetTaskWindow()
+{
+	currentTask->correspondingWindow->reset();
 }
 
 void taskBroker::saveCurrentTask()
@@ -99,9 +109,17 @@ void taskBroker::saveCurrentTask()
 void taskBroker::newTask()
 {
 	currentTask = new blenderTask();
-	int i = floor(ofRandom(tasks.size()));
+	int i = floor(ofRandom(tasks.size()-0.1));
 	currentTask->correspondingWindow = tasks.at(i)->correspondingWindow;
 	currentTask->correspondingWindow->coloredActive = true;
+	vector<blenderTask*>::iterator it = tasks.begin();
+	while (it != tasks.end())
+	{
+		(*it)->correspondingWindow->cmdActive = false;
+		++it;
+	}
+	currentTask->correspondingWindow->cmdActive = true;
+
 }
 
 void taskBroker::outputResults()

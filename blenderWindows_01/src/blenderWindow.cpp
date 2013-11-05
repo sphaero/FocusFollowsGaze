@@ -23,6 +23,13 @@ void blenderWindow::setup() {
 	
 }
 
+void blenderWindow::reset()
+{
+	ofLogVerbose() << "WINDOW";
+	cmdActive = false;
+	taskCompleted = false;
+}
+
 void blenderWindow::update() {
 	
 }

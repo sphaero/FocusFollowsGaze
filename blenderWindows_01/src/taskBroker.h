@@ -21,6 +21,7 @@ public:
 	void newTask();
 	void saveCurrentTask();
 	void determineResult();
+	void resetTaskWindow();
 	void outputResults();
 
 	vector<blenderTask*>	tasks;

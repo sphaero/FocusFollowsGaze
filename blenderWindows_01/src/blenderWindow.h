@@ -18,11 +18,12 @@ public:
 	void setup();
 	void update();
 	void draw();
+	virtual void reset();
 	
 	int offView; //offset for 3D Viewport
 
 	// see windowState diagrams
-	bool cmdActive; 
+	bool cmdActive;
 	bool active; //is window active
 	bool coloredActive; //for color only
 	// time to fade back to original color
