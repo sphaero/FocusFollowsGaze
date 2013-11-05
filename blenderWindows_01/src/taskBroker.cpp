@@ -12,7 +12,7 @@ taskBroker::taskBroker()
 	// TODO Auto-generated constructor stub
 	currentTask = NULL;
 	nextTaskDeparture = 0;
-	randomDelayMax = 2.0f;
+	randomDelayMax = 5.0f;
 }
 
 taskBroker::~taskBroker()
@@ -99,9 +99,9 @@ void taskBroker::saveCurrentTask()
 {
 	measuredTasks.push_back(currentTask);
 
-	ofLogVerbose() << "task finished at: " << currentTask->endTime
-			<< " started at: " << currentTask->startTime
-			<< " status = " << currentTask->result;
+	//ofLogVerbose() << "task finished at: " << currentTask->endTime
+	//		<< " started at: " << currentTask->startTime
+	//		<< " status = " << currentTask->result;
 	currentTask = NULL;
 	nextTaskDeparture = ofRandom(randomDelayMax) + ofGetElapsedTimef();
 }

@@ -21,6 +21,7 @@ public:
 	
 	void setup();
 	void draw();
+	//void reset();
 	void onKeyRelease(int key);
 	void mouseReleased(int x, int y, int button);
 	void mouseMoved(int x, int y);

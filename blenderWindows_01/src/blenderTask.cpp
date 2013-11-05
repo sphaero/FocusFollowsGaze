@@ -11,7 +11,7 @@ blenderTask::blenderTask() {
 	// TODO Auto-generated constructor stub
 	startTime = ofGetElapsedTimef();
 	endTime = 0.f;
-	timeOut = 1.f;
+	timeOut = 5.f;
 	result = blenderTask::INIT;
 	correspondingWindow = NULL;
 }

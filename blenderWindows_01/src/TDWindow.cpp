@@ -77,7 +77,9 @@ void TDWindow::mouseReleased(int x, int y, int button) {
 		}
 		else
 		{
-			taskCompleted = true; //task broker makes it false again
+			if (cmdActive)
+				ofLogVerbose() << "TDWINDOW COMPLETE";
+				taskCompleted = true; //task broker makes it false again
 		}
 		dorotate = false;
 	} 

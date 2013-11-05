@@ -29,7 +29,7 @@ void PropWindow::update()
 	blenderWindow::update();
 	if (cmdActive && button.buttonDown)
 	{
-		ofLogVerbose() << "COMPLEEEETE";
+		ofLogVerbose() << "COMPLETE PROPWINDOW";
 		taskCompleted = true;
 	}
 }
