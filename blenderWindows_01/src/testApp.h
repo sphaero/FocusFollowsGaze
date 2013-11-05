@@ -27,17 +27,18 @@ public:
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
 	
+	// OpenGazer stuff
 	ofxUDPManager	udpSocket;
 	int 			gazeCoords[2];
 	void			receiveGazeCoords();
 	void			drawGaze();
 	
-	//Diffent window types
-	TXTWindow mytxtWindow1;
-	TXTWindow mytxtWindow2;
-	TDWindow mytdWindow;
-	PropWindow  mypropWindow;
+	// Diffent window types
+	TXTWindow 		mytxtWindow1;
+	TXTWindow 		mytxtWindow2;
+	TDWindow 		mytdWindow;
+	PropWindow  	mypropWindow;
 
+	// taskbroker controlling tasks & measurements
 	taskBroker		broker;
-
 };

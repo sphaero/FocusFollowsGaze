@@ -12,21 +12,24 @@ void testApp::setup(){
 	udpSocket.Create();
 	udpSocket.Bind(OG_UDP_PORT);
 	udpSocket.SetNonBlocking(true);
-	//initialise gaze coords
+	// initialise gaze coords
 	gazeCoords[0] = -1;
 	gazeCoords[1] = -1;
 	
+	// Set windows positions & dimensions
 	mypropWindow.set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
 	mytdWindow.set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
 	mytxtWindow1.set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
 	mytxtWindow2.set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
 
+	// Initiase tasks & corresponding windows
 	blenderTask* t0 = new blenderTask();
 	t0->setCorrespondingWindow((blenderWindow&)mypropWindow);
 	blenderTask* t1 = new blenderTask();
 	t1->setCorrespondingWindow((blenderWindow&)mytdWindow);
 	blenderTask* t2 = new blenderTask();
 	t2->setCorrespondingWindow((blenderWindow&)mytxtWindow1);
+	// Add the initialised task to the broker
 	broker.addTask(*t0);
 	broker.addTask(*t1);
 	broker.addTask(*t2);
@@ -34,35 +37,31 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-	//receiveGazeCoords();
+	receiveGazeCoords();
 	broker.update();
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
 	
-	//drawGaze();
+	drawGaze();
 }
 
 void testApp::receiveGazeCoords()
 {
 	char udpMsg[100];
-	udpSocket.Receive(udpMsg, sizeof(udpMsg));
-	if (strlen(udpMsg) > 1)
+	int b;
+	b = udpSocket.Receive(udpMsg, sizeof(udpMsg));
+	if (b > 1)
 	{
 		memcpy(gazeCoords, (void*)udpMsg, sizeof(gazeCoords));
 	}
-	/*else
-	{
-		gazeCoords[0] = -1;
-		gazeCoords[1] = -1;
-	}*/
 }
 
 void testApp::drawGaze()
 {
-	//if(gazeCoords[0] == -1)
-	//	return;
+	if(gazeCoords[0] == -1)
+		return;
 	//ofLogVerbose() << gazeCoords[0] << ":" << gazeCoords[1];
 	int coordX = gazeCoords[0] - ofGetWindowPositionX();
 	int coordY = gazeCoords[1] - ofGetWindowPositionY();
@@ -87,16 +86,15 @@ void testApp::keyReleased(int key){
 	switch (key)
 	{
 	case 'l':
+		// oyutput current measured tasks
 		broker.outputResults();
 		break;
 	case OF_KEY_UP: //change to alt + F11?
 		ofToggleFullscreen();
 		break;
-				
 	default:
 		break;
 	}
-	
 }
 
 //--------------------------------------------------------------
@@ -121,14 +119,15 @@ void testApp::mouseReleased(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::windowResized(int w, int h){
+	// reposition all windows on a resize event
 	mypropWindow.set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
 	mypropWindow.setup();
 	mytdWindow.set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
-	mytdWindow.setup();
+	//mytdWindow.setup();
 	mytxtWindow1.set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
-	mytxtWindow1.setup();
+	//mytxtWindow1.setup();
 	mytxtWindow2.set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
-	mytxtWindow2.setup();
+	//mytxtWindow2.setup();
 }
 
 //--------------------------------------------------------------
