@@ -21,7 +21,15 @@ void testApp::setup(){
 	mytxtWindow1.set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
 	mytxtWindow2.set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
 
-
+	blenderTask* t0 = new blenderTask();
+	t0->setCorrespondingWindow((blenderWindow&)mypropWindow);
+	blenderTask* t1 = new blenderTask();
+	t1->setCorrespondingWindow((blenderWindow&)mytdWindow);
+	blenderTask* t2 = new blenderTask();
+	t2->setCorrespondingWindow((blenderWindow&)mytxtWindow1);
+	broker.addTask(*t0);
+	broker.addTask(*t1);
+	broker.addTask(*t2);
 }
 
 //--------------------------------------------------------------

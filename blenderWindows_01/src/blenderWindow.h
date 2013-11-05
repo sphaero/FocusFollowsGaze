@@ -27,13 +27,18 @@ public:
 	bool coloredActive; //for color only
 	// time to fade back to original color
 	float coloredTime;
+	float coloredStart;
 	
 	bool taskCompleted;
 	
 	ofTrueTypeFont font;
 
 private:
-	void processColored();
+	void processColored(ofColor &c);
+	ofColor windowColor;
+	ofColor activeWindowColor;
+	ofColor	windowColored;
+	float coloredCount;
 };
 
 #endif /* BLENDERWINDOW_H_ */

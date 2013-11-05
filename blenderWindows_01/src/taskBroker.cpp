@@ -13,7 +13,6 @@ taskBroker::taskBroker()
 	currentTask = NULL;
 	nextTaskDeparture = 0;
 	randomDelayMax = 2.0f;
-	
 }
 
 taskBroker::~taskBroker()
@@ -24,7 +23,6 @@ taskBroker::~taskBroker()
 void taskBroker::setup()
 {
 	//initialise possible tasks
-	
 
 }
 
@@ -101,6 +99,9 @@ void taskBroker::saveCurrentTask()
 void taskBroker::newTask()
 {
 	currentTask = new blenderTask();
+	int i = floor(ofRandom(tasks.size()));
+	currentTask->correspondingWindow = tasks.at(i)->correspondingWindow;
+	currentTask->correspondingWindow->coloredActive = true;
 }
 
 void taskBroker::outputResults()
@@ -113,4 +114,9 @@ void taskBroker::outputResults()
 					<< " status = " << (*it)->result;
 		it++;
 	}
+}
+
+void taskBroker::addTask(blenderTask &task)
+{
+	tasks.push_back(&task);
 }

@@ -53,7 +53,7 @@ void TDWindow::draw() {
 	ofPopMatrix();
 	cam.end();
 	
-	cout << taskCompleted << endl;
+	//cout << taskCompleted << endl;
 }
 
 void TDWindow::onKeyRelease(int key) {

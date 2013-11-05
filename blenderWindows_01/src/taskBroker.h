@@ -10,6 +10,7 @@
 
 #include "ofMain.h"
 #include "blenderTask.h"
+#include <vector>
 
 class taskBroker {
 public:
@@ -22,8 +23,8 @@ public:
 	void determineResult();
 	void outputResults();
 
-	std::vector<blenderTask*>	tasks;
-	std::vector<blenderTask*>	measuredTasks;
+	vector<blenderTask*>	tasks;
+	vector<blenderTask*>	measuredTasks;
 
 	void setup();
 	void start();
