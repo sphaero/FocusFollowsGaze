@@ -19,6 +19,7 @@ public:
 	void addTask(blenderTask &task);
 	void newTask();
 	void saveCurrentTask();
+	void determineResult();
 	void outputResults();
 
 	std::vector<blenderTask*>	tasks;
@@ -30,7 +31,7 @@ public:
 
 	blenderTask* 	currentTask;
 	float 			nextTaskDeparture;
-	float			randomDelayMax = 2.0f;
+	float			randomDelayMax;
 };
 
 #endif /* TASKBROKER_H_ */

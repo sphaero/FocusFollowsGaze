@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0439A6BB180D5B5A0002D60E /* ofxTextInputField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0439A6B8180D5B5A0002D60E /* ofxTextInputField.cpp */; };
+		0470B1B41827BEA1002D19A6 /* blenderTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0470B1B21827BEA1002D19A6 /* blenderTask.cpp */; };
+		0470B2361827CAC0002D19A6 /* TDWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0470B2351827CAC0002D19A6 /* TDWindow.cpp */; };
+		0470B2FF1827DF49002D19A6 /* PropWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0470B2FD1827DF49002D19A6 /* PropWindow.cpp */; };
+		0470B30B1827E11A002D19A6 /* TXTWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0470B30A1827E11A002D19A6 /* TXTWindow.cpp */; };
+		0470B55D182809BB002D19A6 /* blenderButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0470B55B182809BB002D19A6 /* blenderButton.cpp */; };
+		04C6B15E1822B6FD005D15EF /* blenderWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B15C1822B6FD005D15EF /* blenderWindow.cpp */; };
+		04C6B16B1822B728005D15EF /* ofxMSAInteractiveObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B1691822B728005D15EF /* ofxMSAInteractiveObject.cpp */; };
+		04C6B35C18240D0E005D15EF /* taskBroker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C6B35A18240D0E005D15EF /* taskBroker.cpp */; };
+		04E90793182288E5000B0160 /* ofxTextInputField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E90790182288E5000B0160 /* ofxTextInputField.cpp */; };
+		04E9079F182288F6000B0160 /* ofxTCPClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E90797182288F6000B0160 /* ofxTCPClient.cpp */; };
+		04E907A0182288F6000B0160 /* ofxTCPManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E90799182288F6000B0160 /* ofxTCPManager.cpp */; };
+		04E907A1182288F6000B0160 /* ofxTCPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E9079B182288F6000B0160 /* ofxTCPServer.cpp */; };
+		04E907A2182288F6000B0160 /* ofxUDPManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E9079D182288F6000B0160 /* ofxUDPManager.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -61,9 +73,35 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0439A6B8180D5B5A0002D60E /* ofxTextInputField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTextInputField.cpp; sourceTree = "<group>"; };
-		0439A6B9180D5B5A0002D60E /* ofxTextInputField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTextInputField.h; sourceTree = "<group>"; };
-		0439A6BA180D5B5A0002D60E /* ofxTextInputFieldFontRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTextInputFieldFontRenderer.h; sourceTree = "<group>"; };
+		0470B1B21827BEA1002D19A6 /* blenderTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blenderTask.cpp; sourceTree = "<group>"; };
+		0470B1B31827BEA1002D19A6 /* blenderTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blenderTask.h; sourceTree = "<group>"; };
+		0470B2341827CAC0002D19A6 /* TDWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDWindow.h; sourceTree = "<group>"; };
+		0470B2351827CAC0002D19A6 /* TDWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TDWindow.cpp; sourceTree = "<group>"; };
+		0470B2FD1827DF49002D19A6 /* PropWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PropWindow.cpp; sourceTree = "<group>"; };
+		0470B2FE1827DF49002D19A6 /* PropWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropWindow.h; sourceTree = "<group>"; };
+		0470B3091827E11A002D19A6 /* TXTWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXTWindow.h; sourceTree = "<group>"; };
+		0470B30A1827E11A002D19A6 /* TXTWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TXTWindow.cpp; sourceTree = "<group>"; };
+		0470B55B182809BB002D19A6 /* blenderButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blenderButton.cpp; sourceTree = "<group>"; };
+		0470B55C182809BB002D19A6 /* blenderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blenderButton.h; sourceTree = "<group>"; };
+		04C6B15C1822B6FD005D15EF /* blenderWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blenderWindow.cpp; sourceTree = "<group>"; };
+		04C6B15D1822B6FD005D15EF /* blenderWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blenderWindow.h; sourceTree = "<group>"; };
+		04C6B1691822B728005D15EF /* ofxMSAInteractiveObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMSAInteractiveObject.cpp; sourceTree = "<group>"; };
+		04C6B16A1822B728005D15EF /* ofxMSAInteractiveObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMSAInteractiveObject.h; sourceTree = "<group>"; };
+		04C6B35A18240D0E005D15EF /* taskBroker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = taskBroker.cpp; sourceTree = "<group>"; };
+		04C6B35B18240D0E005D15EF /* taskBroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = taskBroker.h; sourceTree = "<group>"; };
+		04E90790182288E5000B0160 /* ofxTextInputField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxTextInputField.cpp; path = src/ofxTextInputField.cpp; sourceTree = "<group>"; };
+		04E90791182288E5000B0160 /* ofxTextInputField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxTextInputField.h; path = src/ofxTextInputField.h; sourceTree = "<group>"; };
+		04E90792182288E5000B0160 /* ofxTextInputFieldFontRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxTextInputFieldFontRenderer.h; path = src/ofxTextInputFieldFontRenderer.h; sourceTree = "<group>"; };
+		04E90795182288F6000B0160 /* ofxNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxNetwork.h; sourceTree = "<group>"; };
+		04E90796182288F6000B0160 /* ofxNetworkUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxNetworkUtils.h; sourceTree = "<group>"; };
+		04E90797182288F6000B0160 /* ofxTCPClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTCPClient.cpp; sourceTree = "<group>"; };
+		04E90798182288F6000B0160 /* ofxTCPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTCPClient.h; sourceTree = "<group>"; };
+		04E90799182288F6000B0160 /* ofxTCPManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTCPManager.cpp; sourceTree = "<group>"; };
+		04E9079A182288F6000B0160 /* ofxTCPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTCPManager.h; sourceTree = "<group>"; };
+		04E9079B182288F6000B0160 /* ofxTCPServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTCPServer.cpp; sourceTree = "<group>"; };
+		04E9079C182288F6000B0160 /* ofxTCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTCPServer.h; sourceTree = "<group>"; };
+		04E9079D182288F6000B0160 /* ofxUDPManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxUDPManager.cpp; sourceTree = "<group>"; };
+		04E9079E182288F6000B0160 /* ofxUDPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUDPManager.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -118,23 +156,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0439A6B7180D5B5A0002D60E /* ofxTextInputField */ = {
+		04C6B1681822B728005D15EF /* ofxMSAInteractiveObject */ = {
 			isa = PBXGroup;
 			children = (
-				0439A6B8180D5B5A0002D60E /* ofxTextInputField.cpp */,
-				0439A6B9180D5B5A0002D60E /* ofxTextInputField.h */,
-				0439A6BA180D5B5A0002D60E /* ofxTextInputFieldFontRenderer.h */,
+				04C6B1691822B728005D15EF /* ofxMSAInteractiveObject.cpp */,
+				04C6B16A1822B728005D15EF /* ofxMSAInteractiveObject.h */,
 			);
-			name = ofxTextInputField;
-			path = ../../../addons/ofxTextInputField/src;
+			name = ofxMSAInteractiveObject;
+			path = ../../../addons/ofxMSAInteractiveObject/src;
 			sourceTree = SOURCE_ROOT;
 		};
-		BB4B014C10F69532006C3DED /* addons */ = {
+		04E9078C182288CC000B0160 /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				0439A6B7180D5B5A0002D60E /* ofxTextInputField */,
+				04C6B1681822B728005D15EF /* ofxMSAInteractiveObject */,
+				04E907A818228967000B0160 /* ofxTextInputField */,
+				04E90794182288F6000B0160 /* ofxNetwork */,
 			);
 			name = addons;
+			sourceTree = "<group>";
+		};
+		04E90794182288F6000B0160 /* ofxNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				04E90795182288F6000B0160 /* ofxNetwork.h */,
+				04E90796182288F6000B0160 /* ofxNetworkUtils.h */,
+				04E90797182288F6000B0160 /* ofxTCPClient.cpp */,
+				04E90798182288F6000B0160 /* ofxTCPClient.h */,
+				04E90799182288F6000B0160 /* ofxTCPManager.cpp */,
+				04E9079A182288F6000B0160 /* ofxTCPManager.h */,
+				04E9079B182288F6000B0160 /* ofxTCPServer.cpp */,
+				04E9079C182288F6000B0160 /* ofxTCPServer.h */,
+				04E9079D182288F6000B0160 /* ofxUDPManager.cpp */,
+				04E9079E182288F6000B0160 /* ofxUDPManager.h */,
+			);
+			name = ofxNetwork;
+			path = ../../../addons/ofxNetwork/src;
+			sourceTree = SOURCE_ROOT;
+		};
+		04E907A818228967000B0160 /* ofxTextInputField */ = {
+			isa = PBXGroup;
+			children = (
+				04E90790182288E5000B0160 /* ofxTextInputField.cpp */,
+				04E90791182288E5000B0160 /* ofxTextInputField.h */,
+				04E90792182288E5000B0160 /* ofxTextInputFieldFontRenderer.h */,
+			);
+			name = ofxTextInputField;
 			sourceTree = "<group>";
 		};
 		BBAB23C913894ECA00AA2426 /* system frameworks */ = {
@@ -190,8 +257,8 @@
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
+				04E9078C182288CC000B0160 /* addons */,
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
-				BB4B014C10F69532006C3DED /* addons */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
 				E4B69B5B0A3A1756003C02F2 /* blenderWindows_01Debug.app */,
 			);
@@ -201,8 +268,22 @@
 			isa = PBXGroup;
 			children = (
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
-				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
+				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
+				04C6B15D1822B6FD005D15EF /* blenderWindow.h */,
+				04C6B15C1822B6FD005D15EF /* blenderWindow.cpp */,
+				0470B2341827CAC0002D19A6 /* TDWindow.h */,
+				0470B2351827CAC0002D19A6 /* TDWindow.cpp */,
+				0470B3091827E11A002D19A6 /* TXTWindow.h */,
+				0470B30A1827E11A002D19A6 /* TXTWindow.cpp */,
+				0470B2FE1827DF49002D19A6 /* PropWindow.h */,
+				0470B2FD1827DF49002D19A6 /* PropWindow.cpp */,
+				04C6B35B18240D0E005D15EF /* taskBroker.h */,
+				04C6B35A18240D0E005D15EF /* taskBroker.cpp */,
+				0470B1B31827BEA1002D19A6 /* blenderTask.h */,
+				0470B1B21827BEA1002D19A6 /* blenderTask.cpp */,
+				0470B55C182809BB002D19A6 /* blenderButton.h */,
+				0470B55B182809BB002D19A6 /* blenderButton.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -302,7 +383,19 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
-				0439A6BB180D5B5A0002D60E /* ofxTextInputField.cpp in Sources */,
+				04E90793182288E5000B0160 /* ofxTextInputField.cpp in Sources */,
+				04E9079F182288F6000B0160 /* ofxTCPClient.cpp in Sources */,
+				04E907A0182288F6000B0160 /* ofxTCPManager.cpp in Sources */,
+				04E907A1182288F6000B0160 /* ofxTCPServer.cpp in Sources */,
+				04E907A2182288F6000B0160 /* ofxUDPManager.cpp in Sources */,
+				04C6B15E1822B6FD005D15EF /* blenderWindow.cpp in Sources */,
+				04C6B16B1822B728005D15EF /* ofxMSAInteractiveObject.cpp in Sources */,
+				04C6B35C18240D0E005D15EF /* taskBroker.cpp in Sources */,
+				0470B1B41827BEA1002D19A6 /* blenderTask.cpp in Sources */,
+				0470B2361827CAC0002D19A6 /* TDWindow.cpp in Sources */,
+				0470B2FF1827DF49002D19A6 /* PropWindow.cpp in Sources */,
+				0470B30B1827E11A002D19A6 /* TXTWindow.cpp in Sources */,
+				0470B55D182809BB002D19A6 /* blenderButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

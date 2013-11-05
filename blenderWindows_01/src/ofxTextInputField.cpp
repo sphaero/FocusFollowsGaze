@@ -146,6 +146,7 @@ void ofxTextInputField::draw() {
     
 	ofPushMatrix();
 	ofTranslate(bounds.x, bounds.y);
+	//cout << bounds.y << endl;
 	
 	if(selecting) {
 		
@@ -331,7 +332,7 @@ string ofxTextInputField::wrapText(string& txt, int width){
 
 	//iterate through string untill we find a space
 	std::string::iterator it = txt.begin();
-
+	
 	float currentWidth;
 	int posCount = 0;
 	int prevSpacePos = 0;
@@ -346,6 +347,7 @@ string ofxTextInputField::wrapText(string& txt, int width){
 		{
 			// append from last EOL to previous space to new text buffer
 			// remove space (-1)
+
 			newTxt.append(txt.substr(lastEOLPos, (prevSpacePos-lastEOLPos)));
 			newTxt.append("\n");
 			// save last EOL pos

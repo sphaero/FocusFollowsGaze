@@ -14,13 +14,23 @@ class blenderWindow: public ofxMSAInteractiveObject {
 public:
 	blenderWindow();
 	virtual ~blenderWindow();
+	
+	void setup();
+	void update();
+	void draw();
+	
+	int offView; //offset for 3D Viewport
 
 	// see windowState diagrams
-	bool cmdActive;
-	bool active;
-	bool coloredActive;
+	bool cmdActive; 
+	bool active; //is window active
+	bool coloredActive; //for color only
 	// time to fade back to original color
 	float coloredTime;
+	
+	bool taskCompleted;
+	
+	ofTrueTypeFont font;
 
 private:
 	void processColored();

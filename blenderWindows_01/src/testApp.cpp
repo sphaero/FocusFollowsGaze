@@ -1,10 +1,5 @@
 #include "testApp.h"
 
-#define N_TEXTFIELDS 4
-#define OG_UDP_PORT 20320
-
-ofxTextInputField multilineTextInput[N_TEXTFIELDS];
-ofTrueTypeFont font;
 
 //--------------------------------------------------------------
 void testApp::setup(){
@@ -12,7 +7,6 @@ void testApp::setup(){
 	ofEnableAlphaBlending();
 	ofSetLogLevel(OF_LOG_VERBOSE);
 	ofSetFrameRate(60);
-	font.loadFont("verdana.ttf", 18);
 	
 	// Setup UDP socket to receive data from OpenGazer
 	udpSocket.Create();
@@ -21,12 +15,13 @@ void testApp::setup(){
 	//initialise gaze coords
 	gazeCoords[0] = -1;
 	gazeCoords[1] = -1;
+	
+	mypropWindow.set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
+	mytdWindow.set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
+	mytxtWindow1.set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
+	mytxtWindow2.set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
 
-	for (int i = 0; i < N_TEXTFIELDS; i++) {
-		multilineTextInput[i].setup();
-		multilineTextInput[i].multiline = true;
-		multilineTextInput[i].setFont(font);
-	}
+
 }
 
 //--------------------------------------------------------------
@@ -37,29 +32,8 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	ofFill();
 	
-	ofSetColor(117, 48, 207);
-	ofRect(multilineTextInput[0].bounds.x, multilineTextInput[0].bounds.y, multilineTextInput[0].bounds.width, multilineTextInput[0].bounds.height);
-	ofSetColor(138, 207, 48);
-	ofRect(multilineTextInput[1].bounds.x, multilineTextInput[1].bounds.y, multilineTextInput[1].bounds.width, multilineTextInput[1].bounds.height);
-	ofSetColor(48, 207, 197);
-	ofRect(multilineTextInput[2].bounds.x, multilineTextInput[2].bounds.y, multilineTextInput[2].bounds.width, multilineTextInput[2].bounds.height);
-	ofSetColor(207, 48, 59);
-	ofRect(multilineTextInput[3].bounds.x, multilineTextInput[3].bounds.y, multilineTextInput[3].bounds.width, multilineTextInput[3].bounds.height);
-	
-	ofSetColor(255);
-	ofNoFill();
-	for (int i = 0; i < N_TEXTFIELDS; i++) {
-		//multilineTextInput[i].posActive(mouseX, mouseY);
-		multilineTextInput[i].draw();
-	}
-	
-	drawGaze();
-//	multilineTextInput[0].posActive(mouseX, mouseY);
-//	multilineTextInput[0].draw();
-	
-
+	//drawGaze();
 }
 
 void testApp::receiveGazeCoords()
@@ -107,9 +81,14 @@ void testApp::keyReleased(int key){
 	case 'l':
 		broker.outputResults();
 		break;
+	case OF_KEY_UP: //change to alt + F11?
+		ofToggleFullscreen();
+		break;
+				
 	default:
 		break;
 	}
+	
 }
 
 //--------------------------------------------------------------
@@ -134,27 +113,14 @@ void testApp::mouseReleased(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::windowResized(int w, int h){
-	//dimensions for Blender mock-up
-	multilineTextInput[0].bounds.x = 0;
-	multilineTextInput[0].bounds.y = 0;
-	multilineTextInput[0].bounds.width = ofGetWindowWidth()/4;
-	multilineTextInput[0].bounds.height = ofGetWindowHeight()/4*3;
-
-	multilineTextInput[1].bounds.x = ofGetWindowWidth()/4*3;
-	multilineTextInput[1].bounds.y = 0;
-	multilineTextInput[1].bounds.width = ofGetWindowWidth()/4;
-	multilineTextInput[1].bounds.height = ofGetWindowHeight()/4*3;
-
-	multilineTextInput[2].bounds.x = 0;
-	multilineTextInput[2].bounds.y = ofGetWindowHeight()/4*3;
-	multilineTextInput[2].bounds.width = ofGetWindowWidth();
-	multilineTextInput[2].bounds.height = ofGetWindowHeight()/4;
-
-	multilineTextInput[3].bounds.x = ofGetWindowWidth()/4;
-	multilineTextInput[3].bounds.y = 0;
-	multilineTextInput[3].bounds.width = ofGetWindowWidth()/2;
-	multilineTextInput[3].bounds.height = ofGetWindowHeight()/4*3;
-
+	mypropWindow.set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
+	mypropWindow.setup();
+	mytdWindow.set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
+	mytdWindow.setup();
+	mytxtWindow1.set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
+	mytxtWindow1.setup();
+	mytxtWindow2.set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
+	mytxtWindow2.setup();
 }
 
 //--------------------------------------------------------------
