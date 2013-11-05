@@ -11,6 +11,7 @@
 #define TDWINDOW_H_
 
 #include "blenderWindow.h"
+#include "blender3DBox.h"
 
 class TDWindow: public blenderWindow {
 	
@@ -21,14 +22,16 @@ public:
 	void setup();
 	void draw();
 	void onKeyRelease(int key);
-	void mouseReleased(int x, int y, int button);  
+	void mouseReleased(int x, int y, int button);
+	void mouseMoved(int x, int y);
 	
-	bool gorotate;
+	bool dorotate;
 	int rotatevar;
 
+	ofVec2f lastMouse;
 	ofCamera cam;
 
-
+	blender3DBox box;
 };
 
 #endif /* TDWINDOW_H_ */

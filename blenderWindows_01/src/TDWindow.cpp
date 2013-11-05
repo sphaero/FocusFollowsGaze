@@ -11,7 +11,7 @@
 
 
 TDWindow::TDWindow() {
-	gorotate = false;
+	dorotate = false;
 	taskCompleted = false;
 }
 
@@ -36,21 +36,22 @@ void TDWindow::draw() {
 	
 	ofPushMatrix();
 	
-	if(isMouseOver() && gorotate) {
+	/*if(isMouseOver() && dorotate) {
 		rotatevar = x-getMouseX();
 		ofRotate(rotatevar, 0, 1, 0);
 		//cout << "test" << endl;
 	} else {
 		ofRotate(rotatevar, 0, 1, 0);
-	}
-	
-	ofSetColor(255, 0, 0);
+	}*/
+	box.draw();
+	/*ofSetColor(255, 0, 0);
 	ofFill();
 	ofBox(0, 0, 100, 100);
 	ofSetColor(0, 0, 0);
 	ofNoFill();
 	ofBox(0, 0, 100, 100);
 	ofPopMatrix();
+	*/
 	cam.end();
 	
 	//cout << taskCompleted << endl;
@@ -59,16 +60,31 @@ void TDWindow::draw() {
 void TDWindow::onKeyRelease(int key) {
 	if (key == 'r') {
 		cout << "werkt" << endl;
-		gorotate = true;
+		dorotate = true;
 	}
 }
 
 void TDWindow::mouseReleased(int x, int y, int button) {
-	if (gorotate == true) {
+	if (dorotate == true) {
 		taskCompleted = true; //task broker makes it false again
 	} 
-	gorotate = false;
+	dorotate = false;
 
+}
+
+void TDWindow::mouseMoved(int x, int y)
+{
+	if (dorotate)
+	{
+		ofVec2f mouse(x,y);
+		//box.setOrientation(ofVec3f(x,y,0));
+		ofQuaternion yRot(x-lastMouse.x, ofVec3f(0,1,0));
+		ofQuaternion xRot(y-lastMouse.y, ofVec3f(1,0,0));
+		ofQuaternion curRot = box.getOrientationQuat();
+		curRot *= yRot*xRot;
+		box.setOrientation(curRot);
+		lastMouse = mouse;
+	}
 }
 
 TDWindow::~TDWindow() {
