@@ -32,6 +32,7 @@ public:
 	ofCamera cam;
 
 	blender3DBox box;
+	ofQuaternion prevRotation;
 };
 
 #endif /* TDWINDOW_H_ */

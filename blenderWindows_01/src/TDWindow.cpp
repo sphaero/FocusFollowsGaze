@@ -36,6 +36,11 @@ void TDWindow::draw() {
 	
 	ofPushMatrix();
 	
+	if (dorotate)
+	{
+		ofVec3f prevRotE = prevRotation.getEuler();
+		ofLogVerbose() << "Rotation Euler = " << box.getOrientationEuler()-prevRotE;
+	}
 	/*if(isMouseOver() && dorotate) {
 		rotatevar = x-getMouseX();
 		ofRotate(rotatevar, 0, 1, 0);
@@ -59,17 +64,23 @@ void TDWindow::draw() {
 
 void TDWindow::onKeyRelease(int key) {
 	if (key == 'r') {
-		cout << "werkt" << endl;
 		dorotate = true;
+		prevRotation = box.getOrientationQuat();
 	}
 }
 
 void TDWindow::mouseReleased(int x, int y, int button) {
 	if (dorotate == true) {
-		taskCompleted = true; //task broker makes it false again
+		if (button == 2)
+		{
+			box.setOrientation(prevRotation);
+		}
+		else
+		{
+			taskCompleted = true; //task broker makes it false again
+		}
+		dorotate = false;
 	} 
-	dorotate = false;
-
 }
 
 void TDWindow::mouseMoved(int x, int y)
