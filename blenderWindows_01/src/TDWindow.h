@@ -21,6 +21,7 @@ public:
 	
 	void setup();
 	void draw();
+	void drawGrid(int lines=16, float scale=1.0f);
 	//void reset();
 	void onKeyRelease(int key);
 	void mouseReleased(int x, int y, int button);

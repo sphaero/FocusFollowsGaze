@@ -70,11 +70,11 @@ void blender3DBox::customDraw()
 	ofSetColor(255,0,0);
 	ofFill();
 	//ofSphere(0,0,0,20);
-	ofBox(0, 0, 0, 100);
+	ofBox(0, 0, 0, 2);
 	ofSetColor(0, 0, 0);
 	ofNoFill();
 	//ofSphere(0,0,0,100);
-	ofBox(0, 0, 0, 100);
+	ofBox(0, 0, 0, 2);
 	//boxMesh.draw();
 	ofPopMatrix();
 }

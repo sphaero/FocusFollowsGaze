@@ -18,7 +18,9 @@ TDWindow::TDWindow() {
 void TDWindow::setup() {
 	blenderWindow::setup();
 
-	cam.setPosition(0, 0, 400);
+	cam.setPosition(0, -6, 1);
+	cam.setOrientation(ofVec3f(75,0,0));
+	cam.setNearClip(1.0f);
 	offView = 15;
 	rotatevar = 0;
 }
@@ -35,6 +37,7 @@ void TDWindow::draw() {
 	cam.begin(ofRectangle(x+offView, y+offView, width-offView*2, height-offView*2));	
 	
 	ofPushMatrix();
+	drawGrid();//16, 30.f);
 	
 	if (dorotate)
 	{
@@ -60,6 +63,47 @@ void TDWindow::draw() {
 	cam.end();
 	
 	//cout << taskCompleted << endl;
+}
+
+void TDWindow::drawGrid(int lines, float scale)
+{
+	//just some style hacking to make sure we draw red and blue
+    ofPushStyle();
+    ofDisableLighting();
+    ofEnableAlphaBlending();
+    ofPushMatrix();
+    //ofEnableAlpaBlending();
+
+    float gridRadius = lines * scale;
+    float step = (lines*scale)/lines;
+    int halfway = int(lines/2);
+
+    //float
+
+    ofTranslate(halfway*-step,halfway*-step,0);
+
+    for(int i = 0; i <= lines; i++){
+
+        float pos = i*step;
+        if (i==halfway) {
+            //X-axis red
+            ofSetColor(255, 0, 0, 128);
+            ofLine(0, pos, 0, gridRadius, pos, 0);
+            //Y-axis green
+            ofSetColor(0,255,0);
+            ofLine(pos, 0, 0,  pos, gridRadius, 0);
+            //Z axis blue
+            ofSetColor(0,0,255,128);
+            ofLine(pos, pos, -gridRadius, pos, pos, gridRadius);
+        }
+        else {
+            ofSetColor(140, 140, 140, 128);
+            ofLine(pos, 0, 0,  pos, gridRadius, 0);
+            ofLine(0, pos, 0, gridRadius, pos, 0);
+        }
+    }
+    ofPopMatrix();
+    ofPopStyle();
 }
 
 void TDWindow::onKeyRelease(int key) {
@@ -91,7 +135,7 @@ void TDWindow::mouseMoved(int x, int y)
 	{
 		ofVec2f mouse(x,y);
 		//box.setOrientation(ofVec3f(x,y,0));
-		ofQuaternion yRot(x-lastMouse.x, ofVec3f(0,1,0));
+		ofQuaternion yRot(x-lastMouse.x, ofVec3f(0,0,1));
 		ofQuaternion xRot(y-lastMouse.y, ofVec3f(1,0,0));
 		ofQuaternion curRot = box.getOrientationQuat();
 		curRot *= yRot*xRot;
