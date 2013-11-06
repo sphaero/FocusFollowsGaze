@@ -21,9 +21,10 @@ public:
 
 	void draw();
 	void setup();
+	void update();
 
 	ofxTextInputField multilineTextInput;
-
+	string prevTxt;
 };
 
 #endif /* TXTWINDOW_H_ */

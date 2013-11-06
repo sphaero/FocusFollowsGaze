@@ -30,6 +30,23 @@ void TXTWindow::setup() {
 	
 }
 
+void TXTWindow::update()
+{
+	blenderWindow::update();
+	if (cmdActive)
+	{
+		if (multilineTextInput.text != prevTxt)
+		{
+			ofLogVerbose() << "COMPLETE PROPWINDOW";
+			taskCompleted = true;
+		}
+	}
+	else
+	{
+		prevTxt = multilineTextInput.text;
+	}
+}
+
 void TXTWindow::draw() {
 	blenderWindow::draw();
 	

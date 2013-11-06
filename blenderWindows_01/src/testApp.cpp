@@ -123,11 +123,11 @@ void testApp::windowResized(int w, int h){
 	mypropWindow.set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
 	mypropWindow.setup();
 	mytdWindow.set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
-	//mytdWindow.setup();
+	mytdWindow.setup();
 	mytxtWindow1.set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
-	//mytxtWindow1.setup();
+	mytxtWindow1.setup();
 	mytxtWindow2.set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
-	//mytxtWindow2.setup();
+	mytxtWindow2.setup();
 }
 
 //--------------------------------------------------------------
