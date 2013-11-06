@@ -30,15 +30,20 @@ void testApp::setup(){
 	blenderTask* t2 = new blenderTask();
 	t2->setCorrespondingWindow((blenderWindow&)mytxtWindow1);
 	// Add the initialised task to the broker
+	blenderTask* t3 = new blenderTask();
+	t3->setCorrespondingWindow((blenderWindow&)mytxtWindow2);
 	broker.addTask(*t0);
 	broker.addTask(*t1);
 	broker.addTask(*t2);
+	broker.addTask(*t3);
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
 	receiveGazeCoords();
-	broker.update();
+	if (started) {
+		broker.update();
+	}
 }
 
 //--------------------------------------------------------------
@@ -85,6 +90,9 @@ void testApp::keyPressed(int key){
 void testApp::keyReleased(int key){
 	switch (key)
 	{
+	case 's':
+		started = true;
+		break;
 	case 'l':
 		// oyutput current measured tasks
 		broker.outputResults();
@@ -138,4 +146,10 @@ void testApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void testApp::dragEvent(ofDragInfo dragInfo){ 
 
+}
+
+void testApp::exit()
+{
+	broker.saveResults();
+	broker.outputResults();
 }

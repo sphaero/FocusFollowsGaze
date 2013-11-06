@@ -29,6 +29,7 @@ public:
 	void resetTaskWindow();
 	// output measured results to the console
 	void outputResults();
+	void saveResults();
 
 	// the pool of tasks
 	vector<blenderTask*>	tasks;

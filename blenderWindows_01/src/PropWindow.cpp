@@ -20,7 +20,7 @@ void PropWindow::setup()
 {
 	blenderWindow::setup();
 
-	button.set(2,2, ofGetWindowWidth()/5-4, ofGetWindowHeight()/30);
+	button.set(5,5, ofGetWindowWidth()/5-10, ofGetWindowHeight()/30);
 	button.enableMouseEvents();
 }
 

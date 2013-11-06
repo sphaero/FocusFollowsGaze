@@ -137,6 +137,20 @@ void taskBroker::outputResults()
 	}
 }
 
+void taskBroker::saveResults()
+{
+	string filename = ofToString(ofGetUnixTime());
+	ofLogToFile(filename);
+	std::vector<blenderTask*>::iterator it = measuredTasks.begin();
+	while (it != measuredTasks.end())
+	{
+		float t = (*it)->endTime - (*it)->startTime;
+		ofLog() << (*it)->countId << ";" << t << ";" << (*it)->result;
+		++it;
+	}
+	ofLogToConsole();
+}
+
 void taskBroker::addTask(blenderTask &task)
 {
 	tasks.push_back(&task);
