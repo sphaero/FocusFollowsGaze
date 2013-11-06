@@ -110,8 +110,9 @@ void taskBroker::newTask()
 
 	// pick a random task from the pool
 	int i = floor(ofRandom(tasks.size()-0.1));
-	// from the picked task we copy the pointer to the window
+	// from the picked task we copy the pointer to the window & the id
 	currentTask->correspondingWindow = tasks.at(i)->correspondingWindow;
+	currentTask->identifier = tasks.at(i)->identifier;
 	// mark the window to be colored (color cue) and set cmdActive
 	currentTask->correspondingWindow->coloredActive = true;
 	currentTask->correspondingWindow->cmdActive = true;
@@ -124,13 +125,14 @@ void taskBroker::outputResults()
 	{
 		if ((*it)->result == blenderTask::TIMEOUT)
 		{
-			ofLogVerbose() << (*it)->countId << ": task timed out";
+			ofLogVerbose() << (*it)->countId << ":" << (*it)->identifier << ": task timed out";
 		}
 		else
 		{
 			float t = (*it)->endTime - (*it)->startTime;
 			cout.setf(ios::fixed);
-			ofLogVerbose() << (*it)->countId << ": task finished in:\t" << setprecision(4) << t
+			ofLogVerbose() << (*it)->countId << ":" << (*it)->identifier
+					<< ": task finished in:\t" << t
 					<< " status:\t " << (*it)->result;
 		}
 		++it;
@@ -145,7 +147,11 @@ void taskBroker::saveResults()
 	while (it != measuredTasks.end())
 	{
 		float t = (*it)->endTime - (*it)->startTime;
-		ofLog() << (*it)->countId << ";" << t << ";" << (*it)->result;
+		ofLog() << ";" <<
+				(*it)->countId << ";" <<
+				(*it)->identifier << ";" <<
+				t << ";" <<
+				(*it)->result;
 		++it;
 	}
 	ofLogToConsole();

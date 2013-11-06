@@ -25,13 +25,17 @@ void testApp::setup(){
 	// Initiase tasks & corresponding windows
 	blenderTask* t0 = new blenderTask();
 	t0->setCorrespondingWindow((blenderWindow&)mypropWindow);
+	t0->setIdentifier("PROP");
 	blenderTask* t1 = new blenderTask();
 	t1->setCorrespondingWindow((blenderWindow&)mytdWindow);
+	t1->setIdentifier("TDWN");
 	blenderTask* t2 = new blenderTask();
 	t2->setCorrespondingWindow((blenderWindow&)mytxtWindow1);
+	t2->setIdentifier("TXT1");
 	// Add the initialised task to the broker
 	blenderTask* t3 = new blenderTask();
 	t3->setCorrespondingWindow((blenderWindow&)mytxtWindow2);
+	t3->setIdentifier("TXT2");
 	broker.addTask(*t0);
 	broker.addTask(*t1);
 	broker.addTask(*t2);

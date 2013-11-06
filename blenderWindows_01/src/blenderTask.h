@@ -26,6 +26,7 @@ public:
 
 	static int 				count;
 	int						countId;
+	string					identifier;
 	blenderWindow* 			correspondingWindow;
 	float					timeOut;
 	float					startTime;
@@ -34,6 +35,7 @@ public:
 
 	blenderWindow* 	getCorrespondingWindow() { return correspondingWindow; }
 	void			setCorrespondingWindow(blenderWindow &window) { correspondingWindow = &window; }
+	void			setIdentifier(string id) { identifier = id; }
 
 };
 
