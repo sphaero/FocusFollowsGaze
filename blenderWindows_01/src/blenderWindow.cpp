@@ -22,6 +22,8 @@ void blenderWindow::setup() {
 	
 }
 
+bool blenderWindow::operatorActive = false;
+
 void blenderWindow::reset()
 {
 	ofLogVerbose() << "WINDOW";
@@ -37,14 +39,9 @@ void blenderWindow::draw() {
 
 	//draw window (grey) with mouse over animation
 	ofColor drawColor = windowColor;
-	if(isMouseOver() )
+	if(active)
 	{
 		drawColor = activeWindowColor;
-		active = true;
-	}
-	else
-	{
-		active = false;
 	}
 
 	if (coloredActive)

@@ -23,9 +23,10 @@ public:
 	int offView; //offset for 3D Viewport
 
 	// see windowState diagrams
-	bool cmdActive;
-	bool active; //is window active
-	bool coloredActive; //for color only
+	bool cmdActive;				// is blender task active in this window?
+	bool active; 				// is window active
+	static bool operatorActive; // is an operator (like rotate) active?
+	bool coloredActive; 		//for color only
 	// time to fade back to original color
 	float coloredTime;
 	float coloredStart;
@@ -33,6 +34,9 @@ public:
 	bool taskCompleted;
 	
 	ofTrueTypeFont font;
+
+	void onRollOver(int x, int y) {  if (!operatorActive) active = true; }
+	void onRollOut() { if (!operatorActive) active = false; }
 
 private:
 	void processColored(ofColor &c);

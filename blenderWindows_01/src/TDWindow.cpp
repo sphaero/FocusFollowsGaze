@@ -109,6 +109,7 @@ void TDWindow::drawGrid(int lines, float scale)
 void TDWindow::onKeyRelease(int key) {
 	if (key == 'r') {
 		dorotate = true;
+		operatorActive = true;
 		prevRotation = box.getOrientationQuat();
 	}
 }
@@ -126,6 +127,7 @@ void TDWindow::mouseReleased(int x, int y, int button) {
 				taskCompleted = true; //task broker makes it false again
 		}
 		dorotate = false;
+		operatorActive = false;
 	} 
 }
 
