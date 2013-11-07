@@ -29,6 +29,7 @@ void testApp::setup(){
 	blenderTask* t1 = new blenderTask();
 	t1->setCorrespondingWindow((blenderWindow&)mytdWindow);
 	t1->setIdentifier("TDWN");
+	//t1->timeOut = 10.f;
 	blenderTask* t2 = new blenderTask();
 	t2->setCorrespondingWindow((blenderWindow&)mytxtWindow1);
 	t2->setIdentifier("TXT1");

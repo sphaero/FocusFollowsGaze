@@ -30,6 +30,7 @@ public:
 	// output measured results to the console
 	void outputResults();
 	void saveResults();
+	void determineNextTaskDeparture();
 
 	// the pool of tasks
 	vector<blenderTask*>	tasks;

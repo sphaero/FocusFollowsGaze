@@ -43,7 +43,7 @@ void taskBroker::update() {
 			//check for timeout
 			else if (currentTask->startTime + currentTask->timeOut < curTime )
 			{
-				ofLogVerbose() << "task timeout " << currentTask->correspondingWindow->taskCompleted;
+				ofLogVerbose() << "task timeout " << currentTask->identifier;
 				currentTask->endTime = curTime;
 				currentTask->result = blenderTask::TIMEOUT;
 				resetTaskWindow();
@@ -51,9 +51,17 @@ void taskBroker::update() {
 			}
 		}
 	}
-	else if (nextTaskDeparture < curTime)
+	else if (nextTaskDeparture < curTime )
 	{
-		newTask();
+		if (blenderWindow::operatorActive )
+		{
+			// an operator is still active so determine new moment for next task
+			determineNextTaskDeparture();
+		}
+		else
+		{
+			newTask();
+		}
 	}
 }
 
@@ -92,7 +100,12 @@ void taskBroker::saveCurrentTask()
 	//		<< " started at: " << currentTask->startTime
 	//		<< " status = " << currentTask->result;
 	currentTask = NULL;
-	nextTaskDeparture = ofRandom(randomDelayMax) + ofGetElapsedTimef();
+	determineNextTaskDeparture();
+}
+
+void taskBroker::determineNextTaskDeparture()
+{
+	nextTaskDeparture = ofRandom(0.5f, randomDelayMax) + ofGetElapsedTimef();
 }
 
 void taskBroker::newTask()

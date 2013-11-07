@@ -42,27 +42,20 @@ void TDWindow::draw() {
 	if (dorotate)
 	{
 		ofVec3f prevRotE = prevRotation.getEuler();
-		ofLogVerbose() << "Rotation Euler = " << box.getOrientationEuler()-prevRotE;
+		//ofLogVerbose() << "Rotation Euler = " << box.getOrientationEuler()-prevRotE;
 	}
-	/*if(isMouseOver() && dorotate) {
-		rotatevar = x-getMouseX();
-		ofRotate(rotatevar, 0, 1, 0);
-		//cout << "test" << endl;
-	} else {
-		ofRotate(rotatevar, 0, 1, 0);
-	}*/
 	box.draw();
-	/*ofSetColor(255, 0, 0);
-	ofFill();
-	ofBox(0, 0, 100, 100);
-	ofSetColor(0, 0, 0);
-	ofNoFill();
-	ofBox(0, 0, 100, 100);
-	ofPopMatrix();
-	*/
 	cam.end();
-	
-	//cout << taskCompleted << endl;
+	if (operatorActive && active)
+	{
+		ofSetColor(0,0,0);
+		//ofSphere(300.300,300,300);
+		ofVec3f boxPos = cam.worldToScreen(box.getPosition(), ofRectangle(x+offView, y+offView, width-offView*2, height-offView*2));
+		glLineStipple(1, 0x3F07 );
+		glEnable( GL_LINE_STIPPLE );
+		ofLine(boxPos.x,boxPos.y, ofGetMouseX(), ofGetMouseY());
+		glDisable( GL_LINE_STIPPLE );
+	}
 }
 
 void TDWindow::drawGrid(int lines, float scale)
