@@ -32,6 +32,12 @@ void taskBroker::update() {
 		}
 		else
 		{
+			// check if window is activated and save timestamp
+			if ( currentTask->windowActiveTime < 1.0f &&
+					currentTask->correspondingWindow->active )
+			{
+				currentTask->windowActiveTime = curTime;
+			}
 			// check for if completed (endTime = 0 at start!)
 			if ( currentTask->correspondingWindow->taskCompleted )
 			{
@@ -129,6 +135,12 @@ void taskBroker::newTask()
 	// mark the window to be colored (color cue) and set cmdActive
 	currentTask->correspondingWindow->coloredActive = true;
 	currentTask->correspondingWindow->cmdActive = true;
+	// if the window is already active we don't need to measure activation
+	// time so we set it to the start time.
+	if (currentTask->correspondingWindow->active)
+	{
+		currentTask->windowActiveTime = currentTask->startTime;
+	}
 }
 
 void taskBroker::outputResults()
@@ -143,7 +155,6 @@ void taskBroker::outputResults()
 		else
 		{
 			float t = (*it)->endTime - (*it)->startTime;
-			cout.setf(ios::fixed);
 			ofLogVerbose() << (*it)->countId << ":" << (*it)->identifier
 					<< ": task finished in:\t" << t
 					<< " status:\t " << (*it)->result;
@@ -159,11 +170,14 @@ void taskBroker::saveResults()
 	std::vector<blenderTask*>::iterator it = measuredTasks.begin();
 	while (it != measuredTasks.end())
 	{
-		float t = (*it)->endTime - (*it)->startTime;
+		float tactiv = (*it)->windowActiveTime - (*it)->startTime;
+		float ttotal = (*it)->endTime - (*it)->startTime;
 		ofLog() << ";" <<
 				(*it)->countId << ";" <<
 				(*it)->identifier << ";" <<
-				t << ";" <<
+				(*it)->startTime << ";" <<
+				tactiv << ";" <<
+				ttotal << ";" <<
 				(*it)->result;
 		++it;
 	}

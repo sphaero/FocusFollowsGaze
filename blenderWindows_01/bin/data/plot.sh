@@ -2,9 +2,11 @@
 
 DATA=$1
 XLABEL="taskno."
-YLABEL="seconds"
+YLABEL="time"
 
 gnuplot -p -e "set autoscale;\
+ set terminal png size 800,600 enhanced font \"Helvetica,16\";\
+ set output '$DATA.png'; \
  set xlabel \"$XLABEL\" tc rgb \"black\";\
  set ylabel \"$YLABEL\" tc rgb \"black\";\
  set grid xtics lt 0 lw 1 lc rgb \"#AAAAAA\";\
@@ -13,7 +15,11 @@ gnuplot -p -e "set autoscale;\
  set boxwidth 0.8;\
  set datafile separator \";\";\
  set datafile commentschars \"-\";\
- plot \"< grep PROP 1383763425\" using 2:4 with boxes lc rgb \"green\" title \"modify property\",
- \"< grep TDWN 1383763425\" using 2:4 with boxes lc rgb \"red\" title \"rotate cube\",
- \"< grep TXT1 1383763425\" using 2:4 with boxes lc rgb \"blue\" title \"enter text right\",
- \"< grep TXT2 1383763425\" using 2:4 with boxes lc rgb \"purple\" title \"enter text bottom\";"
+ plot \"< grep PROP $DATA\" using 2:6 with boxes lc rgb \"#2222FF\" title \"modify property\",
+ \"< grep PROP $DATA\" using 2:5 with boxes lc rgb \"#2222AA\" notitle,
+ \"< grep TDWN $DATA\" using 2:6 with boxes lc rgb \"#FF2222\" title \"rotate cube\",
+ \"< grep TDWN $DATA\" using 2:5 with boxes lc rgb \"#AA2222\" notitle,
+ \"< grep TXT1 $DATA\" using 2:6 with boxes lc rgb \"#22FF22\" title \"enter text right\",
+ \"< grep TXT1 $DATA\" using 2:5 with boxes lc rgb \"#22AA22\" notitle,
+ \"< grep TXT2 $DATA\" using 2:6 with boxes lc rgb \"#FF22FF\" title \"enter text right\",
+ \"< grep TXT2 $DATA\" using 2:5 with boxes lc rgb \"#AA22AA\" notitle;"

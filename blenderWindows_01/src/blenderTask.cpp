@@ -15,6 +15,7 @@ blenderTask::blenderTask() {
 	countId = count;
 	// TODO Auto-generated constructor stub
 	startTime = ofGetElapsedTimef();
+	windowActiveTime = 0.f;
 	endTime = 0.f;
 	timeOut = 5.f;
 	result = blenderTask::INIT;

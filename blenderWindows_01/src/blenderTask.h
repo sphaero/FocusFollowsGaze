@@ -30,6 +30,7 @@ public:
 	blenderWindow* 			correspondingWindow;
 	float					timeOut;
 	float					startTime;
+	float					windowActiveTime;
 	float					endTime;
 	blenderTask::RESULT		result;
 
