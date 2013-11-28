@@ -68,6 +68,16 @@ void blenderWindow::processColored(ofColor &c)
 	}
 }
 
+void blenderWindow::onGazeMoved(ofVec2f &coords)
+{
+	ofLogVerbose() << "blenderWindow:" << coords;
+	// is the user looking at us?
+	if (hitTest(coords.x, coords.y))
+	{
+		ofLogVerbose() << "We are watched!!!!!!!";
+	}
+}
+
 blenderWindow::~blenderWindow() {
 	// TODO Auto-generated destructor stub
 }

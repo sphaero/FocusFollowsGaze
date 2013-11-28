@@ -31,8 +31,11 @@ public:
 	// OpenGazer stuff
 	ofxUDPManager	udpSocket;
 	int 			gazeCoords[2];
+	int 			prevGazeCoords[2];
 	void			receiveGazeCoords();
 	void			drawGaze();
+	ofEvent<ofVec2f> gazeMove;
+	//void			eyeMoved(ofVec2f &coords) { ofLogVerbose() << coords; };
 	
 	// Diffent window types
 	TXTWindow 		mytxtWindow1;

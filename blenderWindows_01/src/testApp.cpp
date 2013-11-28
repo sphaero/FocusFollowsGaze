@@ -16,6 +16,10 @@ void testApp::setup(){
 	gazeCoords[0] = -1;
 	gazeCoords[1] = -1;
 	
+	//create an event listener for eye movement
+	//ofAddListener(onEyeMoved, this, &testApp::eyeMoved);
+	ofAddListener(gazeMove, (blenderWindow*)&mypropWindow, &blenderWindow::onGazeMoved);
+
 	// Set windows positions & dimensions
 	mypropWindow.set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
 	mytdWindow.set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
@@ -46,6 +50,15 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
 	receiveGazeCoords();
+	if (gazeCoords[0] != prevGazeCoords[0] || gazeCoords[1] != prevGazeCoords[1] )
+	{
+		// Eyes have moved
+		ofLogVerbose() << "eyes have moved";
+		prevGazeCoords[0] = gazeCoords[0];
+		prevGazeCoords[1] = gazeCoords[1];
+		ofVec2f gc = ofVec2f(gazeCoords[0], gazeCoords[1]);
+		ofNotifyEvent(gazeMove, gc);
+	}
 	if (started) {
 		broker.update();
 	}

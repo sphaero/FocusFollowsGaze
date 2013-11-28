@@ -38,6 +38,9 @@ public:
 	void onRollOver(int x, int y) {  if (!operatorActive) active = true; }
 	void onRollOut() { if (!operatorActive) active = false; }
 
+	// Gaze move event
+	void onGazeMoved(ofVec2f &coords);
+
 private:
 	void processColored(ofColor &c);
 	ofColor windowColor;
