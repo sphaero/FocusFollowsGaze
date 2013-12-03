@@ -3,15 +3,19 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-	ofBackground(240);\
+	ofBackground(0);\
 	ofEnableAlphaBlending();
 	ofSetLogLevel(OF_LOG_VERBOSE);
 	ofSetFrameRate(60);
 	
-	// Setup UDP socket to receive data from OpenGazer
-	udpSocket.Create();
-	udpSocket.Bind(OG_UDP_PORT);
-	udpSocket.SetNonBlocking(true);
+	useGazeFocus = true;
+	if (useGazeFocus)
+	{
+		// Setup UDP socket to receive data from OpenGazer
+		udpSocket.Create();
+		udpSocket.Bind(OG_UDP_PORT);
+		udpSocket.SetNonBlocking(true);
+	}
 	// initialise gaze coords
 	gazeCoords[0] = -1;
 	gazeCoords[1] = -1;
@@ -19,6 +23,9 @@ void testApp::setup(){
 	//create an event listener for eye movement
 	//ofAddListener(onEyeMoved, this, &testApp::eyeMoved);
 	ofAddListener(gazeMove, (blenderWindow*)&mypropWindow, &blenderWindow::onGazeMoved);
+	ofAddListener(gazeMove, (blenderWindow*)&mytdWindow, &blenderWindow::onGazeMoved);
+	ofAddListener(gazeMove, (blenderWindow*)&mytxtWindow1, &blenderWindow::onGazeMoved);
+	ofAddListener(gazeMove, (blenderWindow*)&mytxtWindow2, &blenderWindow::onGazeMoved);
 
 	// Set windows positions & dimensions
 	mypropWindow.set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
@@ -49,15 +56,22 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-	receiveGazeCoords();
-	if (gazeCoords[0] != prevGazeCoords[0] || gazeCoords[1] != prevGazeCoords[1] )
+
+	if (useGazeFocus)
 	{
-		// Eyes have moved
-		ofLogVerbose() << "eyes have moved";
-		prevGazeCoords[0] = gazeCoords[0];
-		prevGazeCoords[1] = gazeCoords[1];
-		ofVec2f gc = ofVec2f(gazeCoords[0], gazeCoords[1]);
-		ofNotifyEvent(gazeMove, gc);
+		receiveGazeCoords();
+		if (gazeCoords[0] != prevGazeCoords[0] || gazeCoords[1] != prevGazeCoords[1] )
+		{
+			// Eyes have moved
+			//ofLogVerbose() << "eyes have moved";
+			prevGazeCoords[2] = gazeCoords[0];
+			prevGazeCoords[3] = gazeCoords[1];
+			int coordX = gazeCoords[2] - ofGetWindowPositionX();
+			int coordY = gazeCoords[3] - ofGetWindowPositionY();
+			ofVec2f gc = ofVec2f(coordX, coordY);
+			ofLogVerbose() << gc;
+			ofNotifyEvent(gazeMove, gc);
+		}
 	}
 	if (started) {
 		broker.update();
@@ -65,9 +79,16 @@ void testApp::update(){
 }
 
 //--------------------------------------------------------------
-void testApp::draw(){
-	
-	drawGaze();
+void testApp::draw()
+{
+	mypropWindow.draw();
+	mytdWindow.draw();
+	mytxtWindow1.draw();
+	mytxtWindow2.draw();
+	if (useGazeFocus)
+	{
+		drawGaze();
+	}
 }
 
 void testApp::receiveGazeCoords()
@@ -85,9 +106,9 @@ void testApp::drawGaze()
 {
 	if(gazeCoords[0] == -1)
 		return;
-	//ofLogVerbose() << gazeCoords[0] << ":" << gazeCoords[1];
-	int coordX = gazeCoords[0] - ofGetWindowPositionX();
-	int coordY = gazeCoords[1] - ofGetWindowPositionY();
+	int coordX = gazeCoords[2] - ofGetWindowPositionX();
+	int coordY = gazeCoords[3] - ofGetWindowPositionY();
+	//ofLogVerbose() << coordX << ":" << coordY;
 	ofPushMatrix();
 	ofNoFill();
 	ofSetColor(100,255,255,100);

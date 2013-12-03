@@ -13,6 +13,7 @@ blenderWindow::blenderWindow() {
 	activeWindowColor = ofColor(144, 144, 144);
 	windowColored = ofColor(255, 123, 25);
 	coloredCount = 1.0f;
+	disableAppEvents();
 }
 
 void blenderWindow::setup() {
@@ -70,11 +71,16 @@ void blenderWindow::processColored(ofColor &c)
 
 void blenderWindow::onGazeMoved(ofVec2f &coords)
 {
-	ofLogVerbose() << "blenderWindow:" << coords;
+	//ofLogVerbose() << "blenderWindow:" << coords;
 	// is the user looking at us?
 	if (hitTest(coords.x, coords.y))
 	{
-		ofLogVerbose() << "We are watched!!!!!!!";
+		if (!operatorActive) active = true;
+		//ofLogVerbose() << "We are watched!!!!!!!";
+	}
+	else
+	{
+		if (!operatorActive) active = false;
 	}
 }
 
