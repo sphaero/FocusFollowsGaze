@@ -9,15 +9,19 @@
 #define BLENDERBUTTON_H_
 
 #include "ofxMSAInteractiveObject.h"
+#include "ofMain.h"
 
 class blenderButton: public ofxMSAInteractiveObject {
 public:
 	blenderButton();
 	virtual ~blenderButton();
 
-	bool buttonDown;
+	bool on;
 	void onRelease(int x, int y, int button);
 	void draw();
+	//void setImage(ofImage img);
+	void setImage(string path);
+	ofImage img;
 };
 
 #endif /* BLENDERBUTTON_H_ */

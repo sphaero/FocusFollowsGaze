@@ -8,14 +8,11 @@ void testApp::setup(){
 	ofSetLogLevel(OF_LOG_VERBOSE);
 	ofSetFrameRate(60);
 	
-	useGazeFocus = true;
-	if (useGazeFocus)
-	{
-		// Setup UDP socket to receive data from OpenGazer
-		udpSocket.Create();
-		udpSocket.Bind(OG_UDP_PORT);
-		udpSocket.SetNonBlocking(true);
-	}
+	// Setup UDP socket to receive data from OpenGazer
+	udpSocket.Create();
+	udpSocket.Bind(OG_UDP_PORT);
+	udpSocket.SetNonBlocking(true);
+
 	// initialise gaze coords
 	gazeCoords[0] = -1;
 	gazeCoords[1] = -1;
@@ -32,6 +29,20 @@ void testApp::setup(){
 	mytdWindow.set(ofGetWindowWidth()/4, 0, ofGetWindowWidth()/2, ofGetWindowHeight()/4*3);
 	mytxtWindow1.set(ofGetWindowWidth()/4*3, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
 	mytxtWindow2.set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
+
+	//position buttons
+	float posX = ofGetWindowWidth() - 64;
+	float posY = ofGetWindowHeight() - 32;
+	gazeTrackBtn.setImage("gaze.png");
+	gazeTrackBtn.enableMouseEvents();
+	gazeTrackBtn.set(posX, posY, 16, 16);
+	startBtn.setImage("record.png");
+	startBtn.enableMouseEvents();
+	startBtn.set(posX+20, posY, 16, 16);
+	cursorBtn.setImage("cursor.png");
+	cursorBtn.enableMouseEvents();
+	cursorBtn.set(posX+40, posY, 16, 16);
+
 
 	// Initiase tasks & corresponding windows
 	blenderTask* t0 = new blenderTask();
@@ -57,23 +68,20 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
 
-	if (useGazeFocus)
+	receiveGazeCoords();
+	if (gazeCoords[0] != prevGazeCoords[0] || gazeCoords[1] != prevGazeCoords[1] )
 	{
-		receiveGazeCoords();
-		if (gazeCoords[0] != prevGazeCoords[0] || gazeCoords[1] != prevGazeCoords[1] )
-		{
-			// Eyes have moved
-			//ofLogVerbose() << "eyes have moved";
-			prevGazeCoords[2] = gazeCoords[0];
-			prevGazeCoords[3] = gazeCoords[1];
-			int coordX = gazeCoords[2] - ofGetWindowPositionX();
-			int coordY = gazeCoords[3] - ofGetWindowPositionY();
-			ofVec2f gc = ofVec2f(coordX, coordY);
-			ofLogVerbose() << gc;
-			ofNotifyEvent(gazeMove, gc);
-		}
+		// Eyes have moved
+		//ofLogVerbose() << "eyes have moved";
+		prevGazeCoords[2] = gazeCoords[0];
+		prevGazeCoords[3] = gazeCoords[1];
+		int coordX = gazeCoords[2] - ofGetWindowPositionX();
+		int coordY = gazeCoords[3] - ofGetWindowPositionY();
+		ofVec2f gc = ofVec2f(coordX, coordY);
+		//ofLogVerbose() << gc;
+		ofNotifyEvent(gazeMove, gc);
 	}
-	if (started) {
+	if (startBtn.on) {
 		broker.update();
 	}
 }
@@ -85,7 +93,7 @@ void testApp::draw()
 	mytdWindow.draw();
 	mytxtWindow1.draw();
 	mytxtWindow2.draw();
-	if (useGazeFocus)
+	if (gazeTrackBtn.on)
 	{
 		drawGaze();
 	}
@@ -108,7 +116,6 @@ void testApp::drawGaze()
 		return;
 	int coordX = gazeCoords[2] - ofGetWindowPositionX();
 	int coordY = gazeCoords[3] - ofGetWindowPositionY();
-	//ofLogVerbose() << coordX << ":" << coordY;
 	ofPushMatrix();
 	ofNoFill();
 	ofSetColor(100,255,255,100);
@@ -130,7 +137,7 @@ void testApp::keyReleased(int key){
 	switch (key)
 	{
 	case 's':
-		started = true;
+		startBtn.on = true;
 		break;
 	case 'l':
 		// oyutput current measured tasks
@@ -175,6 +182,12 @@ void testApp::windowResized(int w, int h){
 	mytxtWindow1.setup();
 	mytxtWindow2.set(0, ofGetWindowHeight()/4*3, ofGetWindowWidth(), ofGetWindowHeight()/4);
 	mytxtWindow2.setup();
+
+	float posX = w - 64;
+	float posY = h - 32;
+	gazeTrackBtn.set(posX, posY, 16, 16);
+	startBtn.set(posX+20, posY, 16, 16);
+	cursorBtn.set(posX+40, posY, 16, 16);
 }
 
 //--------------------------------------------------------------

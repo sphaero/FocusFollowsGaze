@@ -9,7 +9,7 @@
 
 blenderButton::blenderButton() {
 	// TODO Auto-generated constructor stub
-	buttonDown = false;
+	on = false;
 
 }
 
@@ -19,19 +19,33 @@ blenderButton::~blenderButton() {
 
 void blenderButton::onRelease(int x, int y, int button)
 {
-	buttonDown = !buttonDown;
+	on = !on;
 }
 
 void blenderButton::draw()
 {
 	ofFill();
-	if (buttonDown)
-		ofSetColor(100,0,0);
+	if (img.isAllocated()) {
+		if (on)
+			ofSetColor(255);
+		else
+			ofSetColor(255, 255, 255, 100);
+		img.draw(this->x,this->y);
+	}
 	else
-		ofSetColor(0,200,0);
-	ofRect((ofRectangle)*this);
-	ofSetColor(0);
-	ofNoFill();
-	ofRect((ofRectangle)*this);
+	{
+		if (on)
+			ofSetColor(100,0,0);
+		else
+			ofSetColor(0,200,0);
+		ofRect((ofRectangle)*this);
+		ofSetColor(0);
+		ofNoFill();
+		ofRect((ofRectangle)*this);
+	}
+}
 
+void blenderButton::setImage(string path)
+{
+	img.loadImage(path);
 }

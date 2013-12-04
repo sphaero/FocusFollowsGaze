@@ -27,7 +27,7 @@ void PropWindow::setup()
 void PropWindow::update()
 {
 	blenderWindow::update();
-	if (cmdActive && button.buttonDown)
+	if (cmdActive && button.on)
 	{
 		ofLogVerbose() << "COMPLETE PROPWINDOW";
 		taskCompleted = true;
@@ -44,5 +44,5 @@ void PropWindow::reset()
 {
 	ofLogVerbose() << "PROPWIN";
 	blenderWindow::reset();
-	button.buttonDown = false;
+	button.on = false;
 }

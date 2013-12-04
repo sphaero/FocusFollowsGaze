@@ -42,6 +42,11 @@ public:
 	TDWindow 		mytdWindow;
 	PropWindow  	mypropWindow;
 
+	//buttons
+	blenderButton 	gazeTrackBtn;
+	blenderButton 	startBtn;
+	blenderButton 	cursorBtn;
+
 	// taskbroker controlling tasks & measurements
 	taskBroker		broker;
 	bool			started;
