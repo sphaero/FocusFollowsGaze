@@ -25,6 +25,7 @@ public:
 
 	ofxTextInputField multilineTextInput;
 	string prevTxt;
+	void onGazeMoved(ofVec2f &coords);
 };
 
 #endif /* TXTWINDOW_H_ */

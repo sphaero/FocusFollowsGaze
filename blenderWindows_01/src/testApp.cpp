@@ -21,8 +21,8 @@ void testApp::setup(){
 	//ofAddListener(onEyeMoved, this, &testApp::eyeMoved);
 	ofAddListener(gazeMove, (blenderWindow*)&mypropWindow, &blenderWindow::onGazeMoved);
 	ofAddListener(gazeMove, (blenderWindow*)&mytdWindow, &blenderWindow::onGazeMoved);
-	ofAddListener(gazeMove, (blenderWindow*)&mytxtWindow1, &blenderWindow::onGazeMoved);
-	ofAddListener(gazeMove, (blenderWindow*)&mytxtWindow2, &blenderWindow::onGazeMoved);
+	ofAddListener(gazeMove, (TXTWindow*)&mytxtWindow1, &TXTWindow::onGazeMoved);
+	ofAddListener(gazeMove, (TXTWindow*)&mytxtWindow2, &TXTWindow::onGazeMoved);
 
 	// Set windows positions & dimensions
 	mypropWindow.set(0, 0, ofGetWindowWidth()/4, ofGetWindowHeight()/4*3);
@@ -68,15 +68,30 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
 
+	// very ugly code
+	if (gazeTrackBtn.on)
+	{
+		mypropWindow.mouseFocus = false;
+		mytdWindow.mouseFocus = false;
+		mytxtWindow1.mouseFocus = false;
+		mytxtWindow2.mouseFocus = false;
+	}
+	else
+	{
+		mypropWindow.mouseFocus = true;
+		mytdWindow.mouseFocus = true;
+		mytxtWindow1.mouseFocus = true;
+		mytxtWindow2.mouseFocus = true;
+	}
 	receiveGazeCoords();
-	if (gazeCoords[0] != prevGazeCoords[0] || gazeCoords[1] != prevGazeCoords[1] )
+	if ( gazeTrackBtn.on && (gazeCoords[0] != prevGazeCoords[0] || gazeCoords[1] != prevGazeCoords[1]) )
 	{
 		// Eyes have moved
 		//ofLogVerbose() << "eyes have moved";
-		prevGazeCoords[2] = gazeCoords[0];
-		prevGazeCoords[3] = gazeCoords[1];
-		int coordX = gazeCoords[2] - ofGetWindowPositionX();
-		int coordY = gazeCoords[3] - ofGetWindowPositionY();
+		prevGazeCoords[0] = gazeCoords[0];
+		prevGazeCoords[1] = gazeCoords[1];
+		int coordX = gazeCoords[0] - ofGetWindowPositionX();
+		int coordY = gazeCoords[1] - ofGetWindowPositionY();
 		ofVec2f gc = ofVec2f(coordX, coordY);
 		//ofLogVerbose() << gc;
 		ofNotifyEvent(gazeMove, gc);
@@ -84,6 +99,10 @@ void testApp::update(){
 	if (startBtn.on) {
 		broker.update();
 	}
+	mypropWindow.update();
+	mytdWindow.update();
+	mytxtWindow1.update();
+	mytxtWindow2.update();
 }
 
 //--------------------------------------------------------------
@@ -93,7 +112,8 @@ void testApp::draw()
 	mytdWindow.draw();
 	mytxtWindow1.draw();
 	mytxtWindow2.draw();
-	if (gazeTrackBtn.on)
+
+	if (cursorBtn.on)
 	{
 		drawGaze();
 	}
@@ -114,8 +134,8 @@ void testApp::drawGaze()
 {
 	if(gazeCoords[0] == -1)
 		return;
-	int coordX = gazeCoords[2] - ofGetWindowPositionX();
-	int coordY = gazeCoords[3] - ofGetWindowPositionY();
+	int coordX = gazeCoords[0] - ofGetWindowPositionX();
+	int coordY = gazeCoords[1] - ofGetWindowPositionY();
 	ofPushMatrix();
 	ofNoFill();
 	ofSetColor(100,255,255,100);

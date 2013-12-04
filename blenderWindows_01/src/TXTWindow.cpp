@@ -53,6 +53,26 @@ void TXTWindow::draw() {
 	multilineTextInput.draw();
 }
 
+void TXTWindow::onGazeMoved(ofVec2f &coords){
+
+	// is the user looking at us?
+	if (hitTest(coords.x, coords.y))
+	{
+		if (!operatorActive) active = true;
+		if(!multilineTextInput.getIsEditing()){
+			multilineTextInput.beginEditing();
+		}
+	}
+	else
+	{
+		if (!operatorActive) active = false;
+		if(multilineTextInput.getIsEditing())
+		{
+			multilineTextInput.endEditing();
+		}
+	}
+}
+
 TXTWindow::~TXTWindow() {
 	
 }
