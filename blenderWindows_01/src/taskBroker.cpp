@@ -51,6 +51,7 @@ void taskBroker::update() {
 			{
 				ofLogVerbose() << "task timeout " << currentTask->identifier;
 				currentTask->endTime = curTime;
+				currentTask->windowActiveTime = curTime;
 				currentTask->result = blenderTask::TIMEOUT;
 				resetTaskWindow();
 				saveCurrentTask();
