@@ -100,7 +100,7 @@ void TDWindow::drawGrid(int lines, float scale)
 }
 
 void TDWindow::onKeyRelease(int key) {
-	if (key == 'r') {
+	if (key == 'r' && active) {
 		dorotate = true;
 		operatorActive = true;
 		prevRotation = box.getOrientationQuat();
