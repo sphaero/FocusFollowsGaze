@@ -37,7 +37,7 @@ void TXTWindow::update()
 	{
 		if (multilineTextInput.text != prevTxt)
 		{
-			ofLogVerbose() << "COMPLETE PROPWINDOW";
+			ofLogVerbose() << "COMPLETE TXTWINDOW";
 			taskCompleted = true;
 		}
 	}

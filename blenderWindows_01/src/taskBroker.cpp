@@ -82,7 +82,8 @@ void taskBroker::determineResult()
 		currentTask->result = blenderTask::CORRECT;
 	}
 	// task wrong window
-	else if (currentTask->correspondingWindow->active &&
+	// FIXME: this is not right no harm either!!!
+	else if (currentTask->windowActiveTime < 1.0f &&
 			currentTask->correspondingWindow->taskCompleted )
 	{
 		ofLogVerbose() << "task wrong window";
@@ -122,6 +123,7 @@ void taskBroker::newTask()
 	while (it != tasks.end())
 	{
 		(*it)->correspondingWindow->cmdActive = false;
+		(*it)->correspondingWindow->reset();
 		++it;
 	}
 

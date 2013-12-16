@@ -42,7 +42,7 @@ void PropWindow::draw()
 
 void PropWindow::reset()
 {
-	ofLogVerbose() << "PROPWIN";
+	//ofLogVerbose() << "PROPWIN";
 	blenderWindow::reset();
 	button.on = false;
 }
