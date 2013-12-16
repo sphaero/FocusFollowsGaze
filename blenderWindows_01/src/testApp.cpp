@@ -6,8 +6,8 @@ void testApp::setup(){
 	ofBackground(0);\
 	ofEnableAlphaBlending();
 	ofSetLogLevel(OF_LOG_VERBOSE);
-	ofSetFrameRate(60);
-	
+	//ofSetFrameRate(60);
+
 	// Setup UDP socket to receive data from OpenGazer
 	udpSocket.Create();
 	udpSocket.Bind(OG_UDP_PORT);
@@ -119,6 +119,7 @@ void testApp::draw()
 	{
 		drawGaze();
 	}
+        ofDrawBitmapString("Fps: " + ofToString( ofGetFrameRate()), 15,15);
 }
 
 void testApp::receiveGazeCoords()
