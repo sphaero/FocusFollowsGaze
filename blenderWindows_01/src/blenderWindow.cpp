@@ -59,7 +59,7 @@ void blenderWindow::draw() {
 
 void blenderWindow::processColored(ofColor &c)
 {
-	coloredCount -= 0.02f;
+	coloredCount -= 1/ofGetFrameRate();
 	c.lerp(windowColored, coloredCount);
 	if (coloredCount < 0.02)
 	{
