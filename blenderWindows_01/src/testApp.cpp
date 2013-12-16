@@ -16,6 +16,8 @@ void testApp::setup(){
 	// initialise gaze coords
 	gazeCoords[0] = -1;
 	gazeCoords[1] = -1;
+	gazeCoords[2] = -1;
+	gazeCoords[3] = -1;
 	
 	//create an event listener for eye movement
 	//ofAddListener(onEyeMoved, this, &testApp::eyeMoved);
@@ -84,14 +86,14 @@ void testApp::update(){
 		mytxtWindow2.mouseFocus = true;
 	}
 	receiveGazeCoords();
-	if ( gazeTrackBtn.on && (gazeCoords[0] != prevGazeCoords[0] || gazeCoords[1] != prevGazeCoords[1]) )
+	if ( gazeTrackBtn.on && (gazeCoords[2] != prevGazeCoords[0] || gazeCoords[3] != prevGazeCoords[1]) )
 	{
 		// Eyes have moved
 		//ofLogVerbose() << "eyes have moved";
-		prevGazeCoords[0] = gazeCoords[0];
-		prevGazeCoords[1] = gazeCoords[1];
-		int coordX = gazeCoords[0] - ofGetWindowPositionX();
-		int coordY = gazeCoords[1] - ofGetWindowPositionY();
+		prevGazeCoords[0] = gazeCoords[2];
+		prevGazeCoords[1] = gazeCoords[3];
+		int coordX = gazeCoords[2] - ofGetWindowPositionX();
+		int coordY = gazeCoords[3] - ofGetWindowPositionY();
 		ofVec2f gc = ofVec2f(coordX, coordY);
 		//ofLogVerbose() << gc;
 		ofNotifyEvent(gazeMove, gc);
@@ -132,10 +134,10 @@ void testApp::receiveGazeCoords()
 
 void testApp::drawGaze()
 {
-	if(gazeCoords[0] == -1)
+	if(gazeCoords[2] == -1)
 		return;
-	int coordX = gazeCoords[0] - ofGetWindowPositionX();
-	int coordY = gazeCoords[1] - ofGetWindowPositionY();
+	int coordX = gazeCoords[2] - ofGetWindowPositionX();
+	int coordY = gazeCoords[3] - ofGetWindowPositionY();
 	ofPushMatrix();
 	ofNoFill();
 	ofSetColor(100,255,255,100);
